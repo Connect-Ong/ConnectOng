@@ -49,15 +49,39 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="Casos disponíveis" id="doq-0E-Wbx">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="iVZ-xn-Oca"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="iVZ-xn-Oca">
+                            <connections>
+                                <action selector="createIncidentAction:" destination="BYZ-38-t0r" id="ium-8x-dtf"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="0cw-fu-dUi" id="hc5-pI-Gmf"/>
+                        <segue destination="4qV-nJ-HKN" kind="show" identifier="IncidentDetailSegue" id="KHc-iH-3Vv"/>
+                        <segue destination="N2y-5u-sqd" kind="presentation" identifier="AddIncidentSegue" id="LHN-xB-gz5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1255.072463768116" y="144.64285714285714"/>
+        </scene>
+        <!--AddIncident-->
+        <scene sceneID="MCp-47-xjD">
+            <objects>
+                <viewControllerPlaceholder storyboardName="AddIncident" id="N2y-5u-sqd" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XZz-0S-EYr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1858" y="-107"/>
+        </scene>
+        <!--IncidentsDetails-->
+        <scene sceneID="qtL-Bu-fxD">
+            <objects>
+                <viewControllerPlaceholder storyboardName="IncidentsDetails" id="4qV-nJ-HKN" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="ILO-QT-vII"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ft8-fe-uZW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1944" y="148"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="4Fq-CH-tSm">
@@ -76,7 +100,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="IN2-7A-tt5"/>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="0mD-Rz-seE"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9h1-K7-flV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

@@ -38,7 +38,7 @@
     <resources>
         <image name="ConnectONG" width="675" height="369"/>
         <namedColor name="redCustomized">
-            <color red="0.87628865239999998" green="0.1245098338" blue="0.25488561389999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <color red="0.87599998712539673" green="0.125" blue="0.25499999523162842" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
     </resources>
 </document>

@@ -11,6 +11,9 @@ import UIKit
 class ViewController: UIViewController {
     
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBAction func createIncidentAction(_ sender: Any) {
+        self.performSegue(withIdentifier: "AddIncidentSegue", sender: nil)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,6 +41,11 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
         return UICollectionViewCell()
     }
 
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print(indexPath)
+        self.performSegue(withIdentifier: "IncidentDetailSegue", sender: nil)
+    }
+    
 }
 
 
