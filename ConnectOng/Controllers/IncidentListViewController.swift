@@ -58,12 +58,7 @@ extension IncidentListViewController: UICollectionViewDelegate, UICollectionView
             
             // carregar imagem
             let imageURL = incidents[indexPath.row].imgURL
-            let imageData = try? Data(contentsOf: URL(string: imageURL)!)
-            
-            // criando imagem
-            let imagem = UIImage(data: imageData!)
-            cell.pictureImageView.image = imagem
-            
+            cell.url = URL(string: imageURL)
             
             return cell
         }

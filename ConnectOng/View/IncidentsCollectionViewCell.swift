@@ -9,7 +9,7 @@
 import UIKit
 
 class IncidentsCollectionViewCell: UICollectionViewCell {
-
+    
     @IBOutlet weak var cardView: UIView!
     @IBOutlet weak var pictureImageView: UIImageView!
     @IBOutlet weak var cityLabel: UILabel!
@@ -18,15 +18,29 @@ class IncidentsCollectionViewCell: UICollectionViewCell {
     
     static let identifier = "IncidentsCollectionViewCell"
     
+    var url: URL? {
+        didSet {
+            DispatchQueue.global().async {
+                let imageData = try? Data(contentsOf: self.url!)
+                
+                // criando imagem
+                let imagem = UIImage(data: imageData!)
+                DispatchQueue.main.async {
+                    self.pictureImageView.image = imagem
+                }
+            }
+        }
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         
         self.clipsToBounds = false
-//        self.contentView.layer.masksToBounds = false
+        //        self.contentView.layer.masksToBounds = false
         self.layer.masksToBounds = false
         self.applyShadow()
     }
-
+    
 }
 
 extension UIView {
