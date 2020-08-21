@@ -21,7 +21,9 @@ class IncidentsCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        self.contentView.layer.masksToBounds = false
+        self.clipsToBounds = false
+//        self.contentView.layer.masksToBounds = false
+        self.layer.masksToBounds = false
         self.applyShadow()
     }
 
@@ -32,8 +34,8 @@ extension UIView {
         //Criando e aplicando a shadow
         self.layer.cornerRadius = 20.0
         self.layer.shadowColor = UIColor.gray.cgColor
-        self.layer.shadowOffset = CGSize(width: 0.5, height: 2.0)
-        self.layer.shadowRadius = 3.0
-        self.layer.shadowOpacity = 0.2
+        self.layer.shadowOffset = CGSize(width: 1.5, height: 2.0)
+        self.layer.shadowRadius = 2.0
+        self.layer.shadowOpacity = 0.3
     }
 }
