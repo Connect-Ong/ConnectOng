@@ -32,7 +32,7 @@ class AddIncidentViewController: UIViewController {
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) { // clique na view
-        print("\nTaokeys")
+//        print("\nTaokeys")
         self.view.endEditing(true) // fazer o teclado baixar ao clicar na view
     }
 }

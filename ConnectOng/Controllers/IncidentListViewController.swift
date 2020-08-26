@@ -15,6 +15,16 @@ class IncidentListViewController: UIViewController {
         self.performSegue(withIdentifier: "AddIncidentSegue", sender: nil)
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "IncidentDetailSegue" {
+            if let incidentDetail = segue.destination as? IncidentsDetailsViewController,
+               let selectedIncident = sender as? Incident {
+                incidentDetail.incident = selectedIncident
+            }
+        }
+        
+    }
+    
     var incidents = [Incident]()
     
     override func viewDidLoad() {
@@ -28,16 +38,17 @@ class IncidentListViewController: UIViewController {
         
         APIManager.getIncidents(completion: { incidents in
             self.incidents = incidents
-            print(self.incidents.count)
+            
+            IncidentJSONManager.createIncidentList(arrayIncident: incidents)
+            
             DispatchQueue.main.async {
                 self.collectionView.reloadData()
             }
         })
-//       var guardar = APIManager()
-//        guardar.getIncidents()
         
+        self.incidents = IncidentJSONManager.readIncidentList()
+        self.collectionView.reloadData()
     }
-
 }
 
 extension IncidentListViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
@@ -54,7 +65,7 @@ extension IncidentListViewController: UICollectionViewDelegate, UICollectionView
             cell.cityLabel.text = incidents[indexPath.row].city
             cell.titleLabel.text = incidents[indexPath.row].title
             cell.ongLabel.text = incidents[indexPath.row].name
-//            print(incidents[indexPath.row].imgURL)
+            //            print(incidents[indexPath.row].imgURL)
             
             // carregar imagem
             let imageURL = incidents[indexPath.row].imgURL
@@ -64,15 +75,15 @@ extension IncidentListViewController: UICollectionViewDelegate, UICollectionView
         }
         return UICollectionViewCell()
     }
-
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print(indexPath)
-        self.performSegue(withIdentifier: "IncidentDetailSegue", sender: nil)
+        self.performSegue(withIdentifier: "IncidentDetailSegue", sender: incidents[indexPath.row])
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: 190, height: 280)
     }
+    
     
 }
 

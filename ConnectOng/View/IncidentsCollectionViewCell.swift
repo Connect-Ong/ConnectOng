@@ -10,6 +10,8 @@ import UIKit
 
 class IncidentsCollectionViewCell: UICollectionViewCell {
     
+    var imageLoader = ImageLoader.singleton
+    
     @IBOutlet weak var cardView: UIView!
     @IBOutlet weak var pictureImageView: UIImageView!
     @IBOutlet weak var cityLabel: UILabel!
@@ -29,10 +31,13 @@ class IncidentsCollectionViewCell: UICollectionViewCell {
                     self.pictureImageView.image = imagem
                 }
             }
+            self.imageLoader.obtainImage(imagePath: url!.absoluteString) { (img) in
+                self.pictureImageView.image = img
+            }
         }
     }
     
-    override func awakeFromNib() {
+    override func awakeFromNib() { 
         super.awakeFromNib()
         
         self.clipsToBounds = false

@@ -16,8 +16,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mocImage" translatesAutoresizingMaskIntoConstraints="NO" id="p8d-O4-O6s">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="p8d-O4-O6s">
                                 <rect key="frame" x="20" y="49" width="374" height="340"/>
+                                <color key="backgroundColor" red="1" green="0.5" blue="0.58655126328911766" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="340" id="iT3-PQ-KUf"/>
                                 </constraints>
@@ -173,7 +174,7 @@
                         </variation>
                     </view>
                     <connections>
-                        <outlet property="contactOngDetailLabel" destination="rG6-DK-x6L" id="S3a-KG-Zl1"/>
+                        <outlet property="contactOngDetaiButton" destination="rG6-DK-x6L" id="S3a-KG-Zl1"/>
                         <outlet property="descriptionDetailLabel" destination="gv7-mW-0xz" id="Qil-f2-4w2"/>
                         <outlet property="detailImageView" destination="p8d-O4-O6s" id="WG5-vi-PZk"/>
                         <outlet property="titleDetailLabel" destination="2XH-kg-95n" id="5xN-y9-7Ej"/>
@@ -186,7 +187,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="mocImage" width="970" height="600"/>
         <namedColor name="redCustomized">
             <color red="0.87599998712539673" green="0.125" blue="0.25499999523162842" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>

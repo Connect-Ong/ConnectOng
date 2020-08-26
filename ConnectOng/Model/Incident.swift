@@ -10,11 +10,11 @@ import Foundation
 
 // Um incident do meu array de incidents da controller
 
-struct Incident: Decodable {
+struct Incident: Encodable, Decodable {
     let id: Int
     let title: String
     let description: String
-    let value: Int
+    let value: Double
     let ongId: String
     let name: String
     let email: String

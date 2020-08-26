@@ -23,7 +23,6 @@ class APIManager {
         
         let task = URLSession.shared.dataTask(with: urlRequest) { (data, response, error) in
             guard let data = data else { return }
-            print(data)
             
             do {
                 let incidents: [Incident] = try JSONDecoder().decode([Incident].self, from: data)

@@ -15,11 +15,20 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession,
                options connectionOptions: UIScene.ConnectionOptions) {
-        // Use this method to optionally configure and attach the UIWindow `window`
-        // to the provided UIWindowScene `scene`.
-        // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
-        // This delegate does not imply the connecting scene or
-        // session are new (see `application:configurationForConnectingSceneSession` instead).
+        
+//        let file = File(ext: "json", name: "arquivo", folderName: nil)
+//        print("File Path", file.filePath)
+//        let dataString = "LORI IPSIUM ".data(using: .utf8)
+//        file.create(content: dataString!)
+//
+        let docURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
+        print(try? FileManager.default.contentsOfDirectory(atPath: docURL.relativePath))
+//
+//        if let readData = file.read() {
+//             let transform = String(data: readData, encoding: .utf8)!
+//            print(transform)
+//        }
+
         guard (scene as? UIWindowScene) != nil else { return }
     }
 
