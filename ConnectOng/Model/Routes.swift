@@ -10,8 +10,9 @@ import Foundation
 
 
 struct Routes {
-    static let rootURL = "http://localhost:3333"
-    static let incidents = "/incidents/"
+    static let rootURL = "https://api-ajude-alguem.herokuapp.com"
+    static let incidents = "/incidents"
+    static let cadastrar = "/incidents/new"
 }
 
 class APIManager {

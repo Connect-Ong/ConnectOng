@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Hrt-6d-4UG">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Hrt-6d-4UG">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -106,6 +106,9 @@
                                         <include reference="zDH-hf-4Bv"/>
                                     </mask>
                                 </variation>
+                                <connections>
+                                    <action selector="contactWhatsppButtonPressed:" destination="Hrt-6d-4UG" eventType="touchUpInside" id="4go-us-xKK"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -174,7 +177,6 @@
                         </variation>
                     </view>
                     <connections>
-                        <outlet property="contactOngDetaiButton" destination="rG6-DK-x6L" id="S3a-KG-Zl1"/>
                         <outlet property="descriptionDetailLabel" destination="gv7-mW-0xz" id="Qil-f2-4w2"/>
                         <outlet property="detailImageView" destination="p8d-O4-O6s" id="WG5-vi-PZk"/>
                         <outlet property="titleDetailLabel" destination="2XH-kg-95n" id="5xN-y9-7Ej"/>

@@ -8,6 +8,7 @@
 
 import UIKit
 
+@available(iOS 13.0, *)
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
@@ -21,8 +22,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 //        let dataString = "LORI IPSIUM ".data(using: .utf8)
 //        file.create(content: dataString!)
 //
-        let docURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
-        print(try? FileManager.default.contentsOfDirectory(atPath: docURL.relativePath))
+//        let docURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
+//        print(try? FileManager.default.contentsOfDirectory(atPath: docURL.relativePath))
 //
 //        if let readData = file.read() {
 //             let transform = String(data: readData, encoding: .utf8)!

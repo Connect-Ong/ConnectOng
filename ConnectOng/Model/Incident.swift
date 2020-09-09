@@ -22,10 +22,12 @@ struct Incident: Encodable, Decodable {
     let city: String
     let uf: String
     let imgURL: String
+    let sensibleContent: Int
     
     enum CodingKeys: String, CodingKey {
         case ongId = "ong_id"
         case imgURL = "img_url"
+        case sensibleContent = "sensible_content"
         case id, title, description, value, name, email, whatsapp, city, uf
     }
 }
