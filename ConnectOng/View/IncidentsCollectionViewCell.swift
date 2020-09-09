@@ -22,18 +22,6 @@ class IncidentsCollectionViewCell: UICollectionViewCell {
     
     var url: URL? {
         didSet {
-            DispatchQueue.global().async {
-                let imageData = try? Data(contentsOf: self.url!)
-
-                // criando imagem
-                guard let image = UIImage(data: imageData!) else { return }
-                guard imageData != nil else { return }
-////                let image = UIImage(data: imageData) else { return }
-//                let imagem = UIImage(data: imageData!)
-                DispatchQueue.main.async {
-                    self.pictureImageView.image = image
-                }
-            }
             self.imageLoader.obtainImage(imagePath: url!.absoluteString) { (img) in
                 self.pictureImageView.image = img
             }

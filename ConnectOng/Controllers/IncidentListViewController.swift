@@ -57,7 +57,9 @@ extension IncidentListViewController: UICollectionViewDelegate, UICollectionView
         return incidents.count
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    func collectionView(_ collectionView: UICollectionView,
+                        cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: IncidentsCollectionViewCell.identifier,
                                                          for: indexPath) as? IncidentsCollectionViewCell {
             cell.pictureImageView.backgroundColor = UIColor.random()
@@ -80,8 +82,12 @@ extension IncidentListViewController: UICollectionViewDelegate, UICollectionView
         self.performSegue(withIdentifier: "IncidentDetailSegue", sender: incidents[indexPath.row])
     }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
         return CGSize(width: 190, height: 280)
+        
     }
     
     

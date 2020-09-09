@@ -32,9 +32,7 @@ class ImageLoader {
 
         if let image = self.cache.object(forKey: imagePath as NSString) {
             DispatchQueue.main.async {
-                
                 completionHandler(image)
-                
             }
         } else {
             let placeholder = UIImage()
@@ -42,13 +40,16 @@ class ImageLoader {
                 completionHandler(placeholder)
             }
             let url: URL! = URL(string: imagePath)
-            task = session.downloadTask(with: url, completionHandler: { (location, response, error) in
-                if let data = try? Data(contentsOf: location!) {
-                    let img: UIImage! = UIImage(data: data)
-                    self.cache.setObject(img, forKey: imagePath as NSString)
-                    DispatchQueue.main.async {
-                        completionHandler(img)
-                    }
+            task = session.downloadTask(
+                with: url,
+                completionHandler: { (location, _, error) in
+                    if error != nil { return }
+                    if let data = try? Data(contentsOf: location!),
+                        let img: UIImage = UIImage(data: data) {
+                        self.cache.setObject(img, forKey: imagePath as NSString)
+                        DispatchQueue.main.async {
+                            completionHandler(img)
+                        }
                 }
             })
             task.resume()
