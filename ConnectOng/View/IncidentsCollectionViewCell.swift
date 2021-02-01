@@ -37,6 +37,10 @@ class IncidentsCollectionViewCell: UICollectionViewCell {
         self.applyShadow()
     }
     
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        self.pictureImageView.image = nil
+    }
 }
 
 extension UIView {

@@ -31,7 +31,7 @@ class IncidentsDetailsViewController: UIViewController {
         whatsappRequest.host = "send"
         whatsappRequest.queryItems = [
             URLQueryItem(name: "phone", value: "+55\(contact)"),
-            URLQueryItem(name: "text", value: message),
+            URLQueryItem(name: "text", value: message)
         ]
         
         if let whatsappURL = whatsappRequest.url { //"whatsapp://send?phone=+55\(contact)&text=\(message)"

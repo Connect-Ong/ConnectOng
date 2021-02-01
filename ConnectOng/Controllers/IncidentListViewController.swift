@@ -21,6 +21,11 @@ class IncidentListViewController: UIViewController {
                let selectedIncident = sender as? Incident {
                 incidentDetail.incident = selectedIncident
             }
+        } else if segue.identifier == "AddIncidentSegue" {
+            if let navigation = segue.destination as? UINavigationController,
+               let addIncident = navigation.viewControllers.first as? AddIncidentViewController {
+                addIncident.delegate = self
+            }
         }
         
     }
@@ -49,7 +54,10 @@ class IncidentListViewController: UIViewController {
         self.incidents = IncidentJSONManager.readIncidentList()
         self.collectionView.reloadData()
     }
+    
 }
+
+
 
 extension IncidentListViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
@@ -100,5 +108,19 @@ extension UIColor {
                             green: CGFloat.random(in: 0...1),
                             blue: CGFloat.random(in: 0...1),
                             alpha: 1)
+    }
+}
+
+extension IncidentListViewController: AddIncidentDelegate {
+    func updateList() {
+        APIManager.getIncidents(completion: { incidents in
+            self.incidents = incidents
+            
+            IncidentJSONManager.createIncidentList(arrayIncident: incidents)
+            
+            DispatchQueue.main.async {
+                self.collectionView.reloadData()
+            }
+        })
     }
 }

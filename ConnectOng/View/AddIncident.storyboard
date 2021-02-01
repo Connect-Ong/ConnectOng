@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Kd7-xw-AIb">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Kd7-xw-AIb">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -156,6 +156,13 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="descricao" destination="LCu-kS-sAY" id="3Zl-sQ-71G"/>
+                        <outlet property="imageURL" destination="hln-tu-VO9" id="Vrt-tD-1ec"/>
+                        <outlet property="ongID" destination="TrE-Ua-VZX" id="W7H-2k-KXg"/>
+                        <outlet property="tituloDoCaso" destination="lQz-rj-Mn5" id="Uye-Yg-Z1j"/>
+                        <outlet property="valor" destination="9uN-PH-8YK" id="HVp-SB-gbj"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h12-ud-Yq6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

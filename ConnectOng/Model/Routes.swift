@@ -12,7 +12,7 @@ import Foundation
 struct Routes {
     static let rootURL = "https://api-ajude-alguem.herokuapp.com"
     static let incidents = "/incidents"
-    static let cadastrar = "/incidents/new"
+    static let cadastrar = "/incidents"
 }
 
 class APIManager {
@@ -29,7 +29,7 @@ class APIManager {
                 let incidents: [Incident] = try JSONDecoder().decode([Incident].self, from: data)
                 completion(incidents)
             } catch {
-                print(error)
+//                print(error)
             }
             
         }

@@ -16,7 +16,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         let docURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
-        print(try? FileManager.default.contentsOfDirectory(atPath: docURL.relativePath))
+//        print(try? FileManager.default.contentsOfDirectory(atPath: docURL.relativePath))
+            try? FileManager.default.contentsOfDirectory(atPath: docURL.relativePath)
         
         return true
     }
