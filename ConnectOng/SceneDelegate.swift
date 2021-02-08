@@ -35,9 +35,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let scene = (scene as? UIWindowScene) else { return }
 
 		let window = UIWindow(windowScene: scene)
-
 		window.backgroundColor = UIColor.white
-		let mainTableViewController = CreateIncidentTablewViewController(style: .plain)
+
+		let mainTableViewController = CreateIncidentTablewViewController()
 		window.rootViewController = UINavigationController(rootViewController: mainTableViewController)
 		window.makeKeyAndVisible()
 
