@@ -12,6 +12,7 @@ class CreateIncidentTablewViewController: UITableViewController {
 
 	init() {
 		super.init(style: .grouped)
+		tableView.separatorStyle = .none //linhas da tableView
 	}
 	
 	required init?(coder: NSCoder) {
@@ -29,25 +30,25 @@ class CreateIncidentTablewViewController: UITableViewController {
 extension CreateIncidentTablewViewController {
 
 	override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		return 1
+		return 10
 	}
 
 	override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
-		let dequeuedCell = tableView.dequeueReusableCell(withIdentifier: TextFieldFormCell.cellIdentifier)
+		let dequeuedCell = tableView.dequeueReusableCell(withIdentifier: TextFieldFormCell.cellIdentifier, for: indexPath)
 
 		guard let cell = dequeuedCell as? TextFieldFormCell else {
 			return UITableViewCell()
 		}
-		
-		cell.backgroundColor = .blue
+
+		cell.setupTextValue(title: "Mock title", placeholder: "Mock placeholder")
 
 		return cell
 	}
 	
 
-	// altura
-//	override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-//		return 10
-//	}
+	// altura da celula
+	override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+		return 100
+	}
 }
