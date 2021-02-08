@@ -9,12 +9,12 @@
 import Foundation
 
 // Um incident do meu array de incidents da controller
-
+//swiftlint:disable identifier_name
 struct Incident: Encodable, Decodable {
     let id: Int
     let title: String
     let description: String
-    let value: Double
+    let value: String
     let ongId: String
     let name: String
     let email: String
@@ -22,7 +22,7 @@ struct Incident: Encodable, Decodable {
     let city: String
     let uf: String
     let imgURL: String
-    let sensibleContent: Int
+    let sensibleContent: Bool
     
     enum CodingKeys: String, CodingKey {
         case ongId = "ong_id"

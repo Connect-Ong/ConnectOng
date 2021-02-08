@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="PWC-X7-vMD">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="PWC-X7-vMD">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Casos disponíveis-->
+        <!--Ajude um amigo-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="IncidentListViewController" customModule="ConnectOng" customModuleProvider="target" sceneMemberID="viewController">
@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="0cw-fu-dUi">
-                                <rect key="frame" x="10" y="148.5" width="394" height="747.5"/>
+                                <rect key="frame" x="10" y="140" width="394" height="756"/>
                                 <color key="backgroundColor" name="whiteCustomized"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="O5w-08-Vlr">
                                     <size key="itemSize" width="192" height="287"/>
@@ -29,6 +29,7 @@
                                 <cells/>
                             </collectionView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" name="whiteCustomized"/>
                         <constraints>
                             <constraint firstItem="0cw-fu-dUi" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="OUy-hO-qb1"/>
@@ -36,9 +37,8 @@
                             <constraint firstItem="0cw-fu-dUi" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="pso-ia-Cj5"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="0cw-fu-dUi" secondAttribute="trailing" constant="10" id="u9O-Q7-iOS"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Casos disponíveis" id="doq-0E-Wbx">
+                    <navigationItem key="navigationItem" title="Ajude um amigo" id="doq-0E-Wbx">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="iVZ-xn-Oca">
                             <connections>
                                 <action selector="createIncidentAction:" destination="BYZ-38-t0r" id="ium-8x-dtf"/>

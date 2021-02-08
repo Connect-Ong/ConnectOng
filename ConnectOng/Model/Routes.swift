@@ -22,7 +22,7 @@ class APIManager {
         var urlRequest = URLRequest(url: url)
         urlRequest.httpMethod = "GET"
         
-        let task = URLSession.shared.dataTask(with: urlRequest) { (data, response, error) in
+        let task = URLSession.shared.dataTask(with: urlRequest) { (data, _, _) in
             guard let data = data else { return }
             
             do {

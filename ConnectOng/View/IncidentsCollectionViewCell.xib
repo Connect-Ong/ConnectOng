@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -38,11 +38,11 @@
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="en4-BN-vSH">
                                         <rect key="frame" x="0.0" y="0.0" width="160" height="27"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumFontSize="13" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zDk-qb-yXx">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumFontSize="13" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zDk-qb-yXx">
                                         <rect key="frame" x="0.0" y="32" width="160" height="31"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -77,18 +77,18 @@
                     </view>
                 </subviews>
             </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="kwj-gg-1yg" secondAttribute="trailing" id="8iF-iA-48e"/>
                 <constraint firstItem="kwj-gg-1yg" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="TNo-cX-Jqb"/>
                 <constraint firstItem="ZTg-uK-7eu" firstAttribute="bottom" secondItem="kwj-gg-1yg" secondAttribute="bottom" constant="3" id="gIw-JU-ksG"/>
                 <constraint firstItem="kwj-gg-1yg" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="oEo-rl-OQt"/>
             </constraints>
-            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <size key="customSize" width="192" height="289"/>
             <connections>
                 <outlet property="cardView" destination="kwj-gg-1yg" id="clG-yT-jsz"/>
-                <outlet property="cityLabel" destination="en4-BN-vSH" id="Kme-aq-8om"/>
-                <outlet property="ongLabel" destination="m5k-f6-siZ" id="mBl-a8-OeD"/>
+                <outlet property="cityLabel" destination="m5k-f6-siZ" id="4G6-0b-FpN"/>
+                <outlet property="ongLabel" destination="en4-BN-vSH" id="YGv-Ne-LIx"/>
                 <outlet property="pictureImageView" destination="vba-rw-ID6" id="zlG-UN-qhQ"/>
                 <outlet property="titleLabel" destination="zDk-qb-yXx" id="sXr-Mq-KP1"/>
             </connections>

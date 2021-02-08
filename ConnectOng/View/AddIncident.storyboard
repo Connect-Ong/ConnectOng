@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Kd7-xw-AIb">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Kd7-xw-AIb">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -112,7 +112,7 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PYg-F8-8yt">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PYg-F8-8yt">
                                 <rect key="frame" x="50" y="634" width="314" height="50"/>
                                 <color key="backgroundColor" name="redCustomized"/>
                                 <constraints>
@@ -131,6 +131,7 @@
                                 </connections>
                             </button>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="fWq-1h-8Ml"/>
                         <color key="backgroundColor" name="whiteCustomized"/>
                         <constraints>
                             <constraint firstItem="fWq-1h-8Ml" firstAttribute="bottom" secondItem="PYg-F8-8yt" secondAttribute="bottom" constant="90" id="6gs-uj-GG6"/>
@@ -140,7 +141,6 @@
                             <constraint firstItem="rfM-EU-3wP" firstAttribute="trailing" secondItem="PYg-F8-8yt" secondAttribute="trailing" id="tes-Pe-Y5b"/>
                             <constraint firstItem="rfM-EU-3wP" firstAttribute="leading" secondItem="PYg-F8-8yt" secondAttribute="leading" id="ysf-vW-4q2"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="fWq-1h-8Ml"/>
                     </view>
                     <navigationItem key="navigationItem" title="Novo caso" id="1ZP-Da-HUa">
                         <barButtonItem key="leftBarButtonItem" title="Cancelar" id="L1s-em-Y4F">
