@@ -25,6 +25,7 @@
 		1865011624EEC97D00B5307A /* AddIncidentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1865011524EEC97D00B5307A /* AddIncidentViewController.swift */; };
 		1865011D24EFF6AF00B5307A /* Incident.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1865011C24EFF6AF00B5307A /* Incident.swift */; };
 		1865011F24EFF96500B5307A /* Routes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1865011E24EFF96500B5307A /* Routes.swift */; };
+		189AB31125D164E500EA5E83 /* CreateIncidentTablewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189AB31025D164E500EA5E83 /* CreateIncidentTablewViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +61,7 @@
 		1865011524EEC97D00B5307A /* AddIncidentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddIncidentViewController.swift; sourceTree = "<group>"; };
 		1865011C24EFF6AF00B5307A /* Incident.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Incident.swift; sourceTree = "<group>"; };
 		1865011E24EFF96500B5307A /* Routes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Routes.swift; sourceTree = "<group>"; };
+		189AB31025D164E500EA5E83 /* CreateIncidentTablewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateIncidentTablewViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +93,7 @@
 		186500DB24EDC3E700B5307A = {
 			isa = PBXGroup;
 			children = (
+				189AB30F25D161CA00EA5E83 /* Services */,
 				186500E624EDC3E700B5307A /* ConnectOng */,
 				186500FD24EDC3E900B5307A /* ConnectOngTests */,
 				186500E524EDC3E700B5307A /* Products */,
@@ -150,6 +153,7 @@
 				1865011124EEBD4800B5307A /* IncidentsDetailsViewController.swift */,
 				186500EB24EDC3E700B5307A /* IncidentListViewController.swift */,
 				1865011524EEC97D00B5307A /* AddIncidentViewController.swift */,
+				189AB31025D164E500EA5E83 /* CreateIncidentTablewViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -170,6 +174,13 @@
 			children = (
 			);
 			path = VIewModel;
+			sourceTree = "<group>";
+		};
+		189AB30F25D161CA00EA5E83 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -300,6 +311,7 @@
 				1865010C24EDE2E000B5307A /* IncidentsCollectionViewCell.swift in Sources */,
 				186500EC24EDC3E700B5307A /* IncidentListViewController.swift in Sources */,
 				1865011224EEBD4800B5307A /* IncidentsDetailsViewController.swift in Sources */,
+				189AB31125D164E500EA5E83 /* CreateIncidentTablewViewController.swift in Sources */,
 				186500E824EDC3E700B5307A /* AppDelegate.swift in Sources */,
 				1865011F24EFF96500B5307A /* Routes.swift in Sources */,
 				1865011624EEC97D00B5307A /* AddIncidentViewController.swift in Sources */,
