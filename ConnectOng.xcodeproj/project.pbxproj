@@ -26,6 +26,7 @@
 		1865011D24EFF6AF00B5307A /* Incident.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1865011C24EFF6AF00B5307A /* Incident.swift */; };
 		1865011F24EFF96500B5307A /* Routes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1865011E24EFF96500B5307A /* Routes.swift */; };
 		189AB31125D164E500EA5E83 /* CreateIncidentTablewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189AB31025D164E500EA5E83 /* CreateIncidentTablewViewController.swift */; };
+		189AB32425D183FC00EA5E83 /* TextFieldFormCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189AB32325D183FC00EA5E83 /* TextFieldFormCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +63,7 @@
 		1865011C24EFF6AF00B5307A /* Incident.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Incident.swift; sourceTree = "<group>"; };
 		1865011E24EFF96500B5307A /* Routes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Routes.swift; sourceTree = "<group>"; };
 		189AB31025D164E500EA5E83 /* CreateIncidentTablewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateIncidentTablewViewController.swift; sourceTree = "<group>"; };
+		189AB32325D183FC00EA5E83 /* TextFieldFormCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldFormCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +145,7 @@
 				186500ED24EDC3E700B5307A /* IncidentList.storyboard */,
 				1865011324EEC96600B5307A /* AddIncident.storyboard */,
 				186500F224EDC3E900B5307A /* LaunchScreen.storyboard */,
+				189AB32325D183FC00EA5E83 /* TextFieldFormCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -319,6 +322,7 @@
 				1865011D24EFF6AF00B5307A /* Incident.swift in Sources */,
 				1854F5F324F6F430000E0FCA /* File.swift in Sources */,
 				182987C224F5DA3600CBCDA2 /* ImageLoader.swift in Sources */,
+				189AB32425D183FC00EA5E83 /* TextFieldFormCell.swift in Sources */,
 				1854F5F524F70872000E0FCA /* IncidentJSONManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

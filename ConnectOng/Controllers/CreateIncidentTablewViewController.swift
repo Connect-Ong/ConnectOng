@@ -20,6 +20,7 @@ class CreateIncidentTablewViewController: UITableViewController {
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
+		tableView.register(TextFieldFormCell.self, forCellReuseIdentifier: TextFieldFormCell.cellIdentifier)
 	}
 }
 
@@ -32,12 +33,21 @@ extension CreateIncidentTablewViewController {
 	}
 
 	override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-		let cell = UITableViewCell(style: .default, reuseIdentifier: nil)
+
+		let dequeuedCell = tableView.dequeueReusableCell(withIdentifier: TextFieldFormCell.cellIdentifier)
+
+		guard let cell = dequeuedCell as? TextFieldFormCell else {
+			return UITableViewCell()
+		}
+		
+		cell.backgroundColor = .blue
 
 		return cell
 	}
+	
 
-	override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-		return 10
-	}
+	// altura
+//	override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+//		return 10
+//	}
 }
