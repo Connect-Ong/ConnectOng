@@ -34,9 +34,11 @@ class TextFieldFormCell: UITableViewCell {
 		return textField
 	}()
 
-	func setupTextValue(title: String, placeholder: String) {
+	func setupTextValue(title: String, placeholder: String, keyboardType: UIKeyboardType) {
 		textLabelForm.text = title
 		textFieldForm.placeholder = placeholder
+		textFieldForm.keyboardType = keyboardType
+		
 	}
 
 	override func layoutSubviews() {

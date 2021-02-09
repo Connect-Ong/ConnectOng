@@ -28,6 +28,7 @@
 		189AB31125D164E500EA5E83 /* CreateIncidentTablewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189AB31025D164E500EA5E83 /* CreateIncidentTablewViewController.swift */; };
 		189AB32425D183FC00EA5E83 /* TextFieldFormCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189AB32325D183FC00EA5E83 /* TextFieldFormCell.swift */; };
 		189AB34025D1EED200EA5E83 /* TextViewFormCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189AB33F25D1EED200EA5E83 /* TextViewFormCell.swift */; };
+		189AB34425D2B5D600EA5E83 /* SubmitButtonFormCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189AB34325D2B5D600EA5E83 /* SubmitButtonFormCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +67,7 @@
 		189AB31025D164E500EA5E83 /* CreateIncidentTablewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateIncidentTablewViewController.swift; sourceTree = "<group>"; };
 		189AB32325D183FC00EA5E83 /* TextFieldFormCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldFormCell.swift; sourceTree = "<group>"; };
 		189AB33F25D1EED200EA5E83 /* TextViewFormCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViewFormCell.swift; sourceTree = "<group>"; };
+		189AB34325D2B5D600EA5E83 /* SubmitButtonFormCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubmitButtonFormCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,6 +151,7 @@
 				186500F224EDC3E900B5307A /* LaunchScreen.storyboard */,
 				189AB32325D183FC00EA5E83 /* TextFieldFormCell.swift */,
 				189AB33F25D1EED200EA5E83 /* TextViewFormCell.swift */,
+				189AB34325D2B5D600EA5E83 /* SubmitButtonFormCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -314,6 +317,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				189AB34425D2B5D600EA5E83 /* SubmitButtonFormCell.swift in Sources */,
 				1865010C24EDE2E000B5307A /* IncidentsCollectionViewCell.swift in Sources */,
 				186500EC24EDC3E700B5307A /* IncidentListViewController.swift in Sources */,
 				1865011224EEBD4800B5307A /* IncidentsDetailsViewController.swift in Sources */,

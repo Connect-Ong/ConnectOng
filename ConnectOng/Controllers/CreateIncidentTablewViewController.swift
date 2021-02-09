@@ -18,17 +18,35 @@ class CreateIncidentTablewViewController: UITableViewController {
 	required init?(coder: NSCoder) {
 		fatalError("init(coder:) has not been implemented")
 	}
-	
+
+	// dismiss keyboard
+	override func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+		dismissKeyboard()
+	}
+
+	@objc func dismissKeyboard() {
+		 self.view.endEditing(true)
+	}
+
 	override func viewDidLoad() {
 		super.viewDidLoad()
+		// dismiss keyboard
+		let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+		tableView.addGestureRecognizer(tapGesture)
+
 		tableView.register(TextFieldFormCell.self, forCellReuseIdentifier: TextFieldFormCell.cellIdentifier)
 		tableView.register(TextViewFormCell.self, forCellReuseIdentifier: TextViewFormCell.cellIdentifier)
+		tableView.register(SubmitButtonFormCell.self, forCellReuseIdentifier: SubmitButtonFormCell.cellIdentifier)
 	}
 }
 
 // MARK: - UITablewViewDelegate + UItableViewDatasource
 
 extension CreateIncidentTablewViewController {
+
+	override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+		dismissKeyboard()
+	}
 
 	override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 		return 7 
@@ -43,7 +61,7 @@ extension CreateIncidentTablewViewController {
 		case 1:
 			let dequeuedCell = tableView.dequeueReusableCell(withIdentifier: TextFieldFormCell.cellIdentifier, for: indexPath)
 			guard let cell = dequeuedCell as? TextFieldFormCell else { return UITableViewCell() }
-			cell.setupTextValue(title: "Título do caso", placeholder: "Máximo 20 caracteres")
+			cell.setupTextValue(title: "Título do caso", placeholder: "Máximo 50 caracteres", keyboardType: .asciiCapable)
 			return cell
 		case 2:
 			let dequeuedCell = tableView.dequeueReusableCell(withIdentifier: TextViewFormCell.cellIdentifier, for: indexPath)
@@ -53,18 +71,28 @@ extension CreateIncidentTablewViewController {
 		case 3:
 			let dequeuedCell = tableView.dequeueReusableCell(withIdentifier: TextFieldFormCell.cellIdentifier, for: indexPath)
 			guard let cell = dequeuedCell as? TextFieldFormCell else { return UITableViewCell() }
-			cell.setupTextValue(title: "Cidade", placeholder: "Cidade do caso")
+			cell.setupTextValue(title: "Cidade", placeholder: "Cidade do caso", keyboardType: .asciiCapable)
 			return cell
 		case 4:
 			let dequeuedCell = tableView.dequeueReusableCell(withIdentifier: TextFieldFormCell.cellIdentifier, for: indexPath)
 			guard let cell = dequeuedCell as? TextFieldFormCell else { return UITableViewCell() }
-			cell.setupTextValue(title: "Valor", placeholder: "Caso adoção, coloque 0")
+			cell.setupTextValue(title: "Valor", placeholder: "Caso adoção, coloque 0", keyboardType: .numberPad)
 			return cell
 		case 5:
 			let dequeuedCell = tableView.dequeueReusableCell(withIdentifier: TextFieldFormCell.cellIdentifier, for: indexPath)
 			guard let cell = dequeuedCell as? TextFieldFormCell else { return UITableViewCell() }
-			cell.setupTextValue(title: "Ong ID", placeholder: "Digite seu OngID")
+			cell.setupTextValue(title: "Ong ID", placeholder: "Digite seu OngID", keyboardType: .numberPad)
 			return cell
+		case 6:
+			let dequeuedCell = tableView.dequeueReusableCell(withIdentifier: SubmitButtonFormCell.cellIdentifier, for: indexPath)
+			guard let cell = dequeuedCell as? SubmitButtonFormCell else { return UITableViewCell() }
+//			cell.createButtonWasTapped.self = indexPath.row
+			//			cell.setupTextValue(title: "Ong ID", placeholder: "Digite seu OngID")
+//						dequeuedCell.callback = { cell in
+//							  let actualIndexPath = tableView.indexPath(for: cell)!
+//							  print("Button pressed", actualIndexPath)
+			return cell
+
 
 		default:
 			return UITableViewCell()
