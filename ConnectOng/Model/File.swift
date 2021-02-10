@@ -36,7 +36,7 @@ struct File {
         return URL(fileURLWithPath: filePath)
     }
     
-    //MARK: Metodos do meu arquivo
+    // MARK: Metodos do meu arquivo
     func create(content: Data) {
         FileManager.default.createFile(atPath: self.filePath, contents: content, attributes: nil)
     }
