@@ -14,6 +14,7 @@ class IncidentListViewController: UIViewController {
 
 	@IBAction func createIncidentAction(_ sender: Any) {
 		let createIncident = CreateIncidentTableViewController()
+		createIncident.delegate = self
 		let navigation = UINavigationController(rootViewController: createIncident)
 		self.navigationController?.present(navigation, animated: true, completion: nil)
     }
@@ -24,13 +25,7 @@ class IncidentListViewController: UIViewController {
                let selectedIncident = sender as? Incident {
                 incidentDetail.incident = selectedIncident
             }
-        } else if segue.identifier == "AddIncidentSegue" {
-            if let navigation = segue.destination as? UINavigationController,
-               let addIncident = navigation.viewControllers.first as? AddIncidentViewController {
-                addIncident.delegate = self
-            }
         }
-        
     }
     
 	var incidents = [Incident]() {
@@ -72,7 +67,7 @@ class IncidentListViewController: UIViewController {
         self.collectionView.register(UINib(nibName: "IncidentsCollectionViewCell", bundle: .main),
                                      forCellWithReuseIdentifier: IncidentsCollectionViewCell.identifier)
         
-        APIManager.getIncidents(completion: { incidents in
+        Networking.getIncidents(completion: { incidents in
             self.incidents = incidents
             
             IncidentJSONManager.createIncidentList(arrayIncident: incidents)
@@ -124,9 +119,7 @@ extension IncidentListViewController: UICollectionViewDelegate, UICollectionView
         self.performSegue(withIdentifier: "IncidentDetailSegue", sender: incidents[indexPath.row])
     }
     
-    func collectionView(_ collectionView: UICollectionView,
-                        layout collectionViewLayout: UICollectionViewLayout,
-						sizeForItemAt indexPath: IndexPath) -> CGSize {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
 		return UIDevice.current.sizeForCollectionCell()
     }
 
@@ -140,13 +133,13 @@ extension IncidentListViewController: UICollectionViewDelegate, UICollectionView
     
 }
 
-extension IncidentListViewController: AddIncidentDelegate {
+extension IncidentListViewController: CreateIncidentDelegate {
     func updateList() {
-        APIManager.getIncidents(completion: { incidents in
+        Networking.getIncidents(completion: { incidents in
             self.incidents = incidents
-            
+
             IncidentJSONManager.createIncidentList(arrayIncident: incidents)
-            
+
             DispatchQueue.main.async {
                 self.collectionView.reloadData()
             }

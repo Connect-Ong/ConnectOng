@@ -32,7 +32,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
 
 		// MARK: - RootViewController (voltar posteriormente a storyboard
-        guard let scene = (scene as? UIWindowScene) else { return }
+//        guard let scene = (scene as? UIWindowScene) else { return }
 
 //		let window = UIWindow(windowScene: scene)
 //		window.backgroundColor = UIColor.white

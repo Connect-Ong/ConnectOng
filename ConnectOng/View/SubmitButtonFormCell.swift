@@ -12,6 +12,8 @@ class SubmitButtonFormCell: UITableViewCell {
 
 	static let cellIdentifier: String = "SubmitButtonFormCell"
 
+	var submitHandler: () -> Void = { }
+
 	let submitButton: UIButton = {
 		let button = UIButton(type: .system)
 		button.setTitle("Criar", for: .normal)
@@ -24,7 +26,7 @@ class SubmitButtonFormCell: UITableViewCell {
 	}()
 
 	@objc func createButtonWasTapped() {
-		print("Tapped here 🖖🏼")
+		submitHandler()
 	}
 
 	override func layoutSubviews() {

@@ -55,7 +55,7 @@ class ImagePickerFormCell: UITableViewCell {
 		imagePickerButton.translatesAutoresizingMaskIntoConstraints = false
 		descriptionLabel.translatesAutoresizingMaskIntoConstraints = false
 		NSLayoutConstraint.activate([
-			imagePickerButton.topAnchor.constraint(equalTo: self.contentView.topAnchor, constant: 40),
+			imagePickerButton.topAnchor.constraint(equalTo: self.contentView.topAnchor, constant: -10),
 			imagePickerButton.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: 20),
 			imagePickerButton.widthAnchor.constraint(equalToConstant: 280),
 			imagePickerButton.heightAnchor.constraint(equalToConstant: 40),

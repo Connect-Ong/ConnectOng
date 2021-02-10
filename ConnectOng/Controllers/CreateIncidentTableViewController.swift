@@ -10,6 +10,8 @@ import UIKit
 //swiftlint:disable cyclomatic_complexity
 class CreateIncidentTableViewController: UITableViewController {
 
+	weak var delegate: CreateIncidentDelegate?
+
 	lazy var imagePicker: ImagePicker = {
 		ImagePicker(presentationController: self, delegate: self)
 	}()
@@ -34,8 +36,6 @@ class CreateIncidentTableViewController: UITableViewController {
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		
-		tableView.contentInsetAdjustmentBehavior = .never // tirar espaço entre navigation e tableView
 
 		setupNavigationItem()
 
@@ -75,12 +75,42 @@ class CreateIncidentTableViewController: UITableViewController {
 	}
 
 	@objc func didTapRegister() {
-		print("Ok")
+		createIncidentSubmission()
 	}
 
 	@objc func didTapCancel() {
 		self.dismiss(animated: true, completion: nil)
 	}
+
+	func createIncidentSubmission() {
+
+		// MARK: Acessando cada celula do formulario
+//		tableView.cellForRow(at: IndexPath(row: 0, section: 0)) as? ImagePickerFormCell
+		guard let titleCell = tableView.cellForRow(at: IndexPath(row: 1, section: 0)) as? TextFieldFormCell,
+			  let descriptionCell = tableView.cellForRow(at: IndexPath(row: 2, section: 0)) as? TextViewFormCell,
+//			  let cityCell = tableView.cellForRow(at: IndexPath(row: 3, section: 0)) as? TextFieldFormCell,
+			  let valueCell = tableView.cellForRow(at: IndexPath(row: 3, section: 0)) as? TextFieldFormCell,
+			  let ongIDCell = tableView.cellForRow(at: IndexPath(row: 4, section: 0)) as? TextFieldFormCell else {
+			return
+		}
+
+		print("Chamando o back...")
+
+		// MARK: Chamar o Back via Networking
+		Networking.createIncidentRequest(
+			ongID: ongIDCell.textFieldForm.text,
+			title: titleCell.textFieldForm.text,
+			description: descriptionCell.textViewForm.text,
+			value: valueCell.textFieldForm.text,
+			imgUrl: "",
+//			city: cityCell.textFieldForm.text ?? "",
+			completion: { [weak self] in
+				self?.dismiss(animated: true, completion: nil)
+				self?.delegate?.updateList()
+			}
+		)
+	}
+
 }
 
 extension CreateIncidentTableViewController: ImagePickerDelegate {
@@ -98,7 +128,7 @@ extension CreateIncidentTableViewController {
 	}
 
 	override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		return 7 
+		return 6
 	}
 
 	override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -122,29 +152,27 @@ extension CreateIncidentTableViewController {
 			guard let cell = dequeuedCell as? TextViewFormCell else { return UITableViewCell() }
 			cell.setupTextValue(title: "Descrição", placeholder: "Máximo 200 caracteres")
 			return cell
+//		case 3:
+//			let dequeuedCell = tableView.dequeueReusableCell(withIdentifier: TextFieldFormCell.cellIdentifier, for: indexPath)
+//			guard let cell = dequeuedCell as? TextFieldFormCell else { return UITableViewCell() }
+//			cell.setupTextValue(title: "Cidade", placeholder: "Cidade do caso", keyboardType: .asciiCapable)
+//			return cell
 		case 3:
-			let dequeuedCell = tableView.dequeueReusableCell(withIdentifier: TextFieldFormCell.cellIdentifier, for: indexPath)
-			guard let cell = dequeuedCell as? TextFieldFormCell else { return UITableViewCell() }
-			cell.setupTextValue(title: "Cidade", placeholder: "Cidade do caso", keyboardType: .asciiCapable)
-			return cell
-		case 4:
 			let dequeuedCell = tableView.dequeueReusableCell(withIdentifier: TextFieldFormCell.cellIdentifier, for: indexPath)
 			guard let cell = dequeuedCell as? TextFieldFormCell else { return UITableViewCell() }
 			cell.setupTextValue(title: "Valor", placeholder: "Caso adoção, coloque 0", keyboardType: .numberPad)
 			return cell
-		case 5:
+		case 4:
 			let dequeuedCell = tableView.dequeueReusableCell(withIdentifier: TextFieldFormCell.cellIdentifier, for: indexPath)
 			guard let cell = dequeuedCell as? TextFieldFormCell else { return UITableViewCell() }
 			cell.setupTextValue(title: "Ong ID", placeholder: "Digite seu OngID", keyboardType: .numberPad)
 			return cell
-		case 6:
+		case 5:
 			let dequeuedCell = tableView.dequeueReusableCell(withIdentifier: SubmitButtonFormCell.cellIdentifier, for: indexPath)
 			guard let cell = dequeuedCell as? SubmitButtonFormCell else { return UITableViewCell() }
-//			cell.createButtonWasTapped.self = indexPath.row
-			//			cell.setupTextValue(title: "Ong ID", placeholder: "Digite seu OngID")
-//						dequeuedCell.callback = { cell in
-//							  let actualIndexPath = tableView.indexPath(for: cell)!
-//							  print("Button pressed", actualIndexPath)
+			cell.submitHandler = { [weak self] in
+				self?.createIncidentSubmission()
+			}
 			return cell
 
 
@@ -158,7 +186,7 @@ extension CreateIncidentTableViewController {
 	override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
 		switch indexPath.row {
 		case 0:
-			return 135
+			return 100
 		case 2:
 			return 140
 		case 6:
