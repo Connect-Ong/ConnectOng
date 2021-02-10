@@ -42,6 +42,7 @@ class ImagePickerFormCell: UITableViewCell {
 
 	override func layoutSubviews() {
 		super.layoutSubviews()
+		self.selectionStyle = .none
 		self.backgroundColor = .clear
 		self.contentView.addSubview(imagePickerButton)
 		self.contentView.addSubview(descriptionLabel)
@@ -54,9 +55,9 @@ class ImagePickerFormCell: UITableViewCell {
 		imagePickerButton.translatesAutoresizingMaskIntoConstraints = false
 		descriptionLabel.translatesAutoresizingMaskIntoConstraints = false
 		NSLayoutConstraint.activate([
+			imagePickerButton.topAnchor.constraint(equalTo: self.contentView.topAnchor, constant: 40),
 			imagePickerButton.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: 20),
 			imagePickerButton.widthAnchor.constraint(equalToConstant: 280),
-			imagePickerButton.topAnchor.constraint(equalTo: self.contentView.topAnchor, constant: 20),
 			imagePickerButton.heightAnchor.constraint(equalToConstant: 40),
 
 			descriptionLabel.topAnchor.constraint(equalTo: self.imagePickerButton.bottomAnchor, constant: 5),

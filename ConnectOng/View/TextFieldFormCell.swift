@@ -43,6 +43,7 @@ class TextFieldFormCell: UITableViewCell {
 
 	override func layoutSubviews() {
 		super.layoutSubviews()
+		self.selectionStyle = .none
 
 		self.backgroundColor = .clear
 		self.contentView.backgroundColor = .clear

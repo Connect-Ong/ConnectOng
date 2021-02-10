@@ -11,8 +11,11 @@ import UIKit
 class IncidentListViewController: UIViewController {
     
     @IBOutlet weak var collectionView: UICollectionView!
-    @IBAction func createIncidentAction(_ sender: Any) {
-        self.performSegue(withIdentifier: "AddIncidentSegue", sender: nil)
+
+	@IBAction func createIncidentAction(_ sender: Any) {
+		let createIncident = CreateIncidentTableViewController()
+		let navigation = UINavigationController(rootViewController: createIncident)
+		self.navigationController?.present(navigation, animated: true, completion: nil)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -123,23 +126,18 @@ extension IncidentListViewController: UICollectionViewDelegate, UICollectionView
     
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
-                        sizeForItemAt indexPath: IndexPath) -> CGSize {
-        
-        return CGSize(width: 190, height: 280)
-        
+						sizeForItemAt indexPath: IndexPath) -> CGSize {
+		return UIDevice.current.sizeForCollectionCell()
     }
-    
-    
-}
 
+	func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+		return 10
+	}
 
-extension UIColor {
-    static func random() -> UIColor {
-        return UIColor.init(red: CGFloat.random(in: 0...1),
-                            green: CGFloat.random(in: 0...1),
-                            blue: CGFloat.random(in: 0...1),
-                            alpha: 1)
-    }
+	func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+		return 10
+	}
+    
 }
 
 extension IncidentListViewController: AddIncidentDelegate {

@@ -32,6 +32,7 @@ class TextViewFormCell: UITableViewCell {
 
 		textViewForm.delegate = self
 
+		selectionStyle = .none
 		backgroundColor = .clear
 		contentView.backgroundColor = .clear
 

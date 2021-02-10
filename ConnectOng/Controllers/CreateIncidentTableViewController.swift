@@ -8,7 +8,7 @@
 
 import UIKit
 //swiftlint:disable cyclomatic_complexity
-class CreateIncidentTablewViewController: UITableViewController {
+class CreateIncidentTableViewController: UITableViewController {
 
 	lazy var imagePicker: ImagePicker = {
 		ImagePicker(presentationController: self, delegate: self)
@@ -34,6 +34,11 @@ class CreateIncidentTablewViewController: UITableViewController {
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
+		
+		tableView.contentInsetAdjustmentBehavior = .never // tirar espaço entre navigation e tableView
+
+		setupNavigationItem()
+
 		// dismiss keyboard
 		let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
 		tableView.addGestureRecognizer(tapGesture)
@@ -43,9 +48,42 @@ class CreateIncidentTablewViewController: UITableViewController {
 		tableView.register(SubmitButtonFormCell.self, forCellReuseIdentifier: SubmitButtonFormCell.cellIdentifier)
 		tableView.register(ImagePickerFormCell.self, forCellReuseIdentifier: ImagePickerFormCell.cellIdentifier)
 	}
+
+	func setupNavigationItem() {
+		navigationItem.title = "Novo Caso"
+
+		//RightBarButton
+		let rightBarButton = UIBarButtonItem(
+			title: "Criar",
+			style: .done,
+			target: self,
+			action: #selector(didTapRegister)
+		)
+		rightBarButton.tintColor = UIColor(named: "redCustomized")
+
+		//LeftBarButton
+		let leftBarButton = UIBarButtonItem(
+			title: "Cancelar",
+			style: .plain,
+			target: self,
+			action: #selector(didTapCancel)
+		)
+		leftBarButton.tintColor = UIColor(named: "redCustomized")
+
+		navigationItem.rightBarButtonItem = rightBarButton
+		navigationItem.leftBarButtonItem = leftBarButton
+	}
+
+	@objc func didTapRegister() {
+		print("Ok")
+	}
+
+	@objc func didTapCancel() {
+		self.dismiss(animated: true, completion: nil)
+	}
 }
 
-extension CreateIncidentTablewViewController: ImagePickerDelegate {
+extension CreateIncidentTableViewController: ImagePickerDelegate {
 	func didSelect(image: UIImage?) {
 		print("Recebeu 📸")
 	}
@@ -53,7 +91,7 @@ extension CreateIncidentTablewViewController: ImagePickerDelegate {
 
 // MARK: - UITablewViewDelegate + UItableViewDatasource
 
-extension CreateIncidentTablewViewController {
+extension CreateIncidentTableViewController {
 
 	override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 		dismissKeyboard()
@@ -118,11 +156,15 @@ extension CreateIncidentTablewViewController {
 
 	// altura da celula
 	override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-		if indexPath.row == 0 {
-			return 120
-		} else if indexPath.row == 2 {
+		switch indexPath.row {
+		case 0:
+			return 135
+		case 2:
 			return 140
+		case 6:
+			return 110
+		default:
+			return 100
 		}
-		return 100
 	}
 }

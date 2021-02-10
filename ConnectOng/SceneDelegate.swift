@@ -34,14 +34,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 		// MARK: - RootViewController (voltar posteriormente a storyboard
         guard let scene = (scene as? UIWindowScene) else { return }
 
-		let window = UIWindow(windowScene: scene)
-		window.backgroundColor = UIColor.white
+//		let window = UIWindow(windowScene: scene)
+//		window.backgroundColor = UIColor.white
+//
+//		let mainTableViewController = CreateIncidentTablewViewController()
+//		window.rootViewController = UINavigationController(rootViewController: mainTableViewController)
+//		window.makeKeyAndVisible()
 
-		let mainTableViewController = CreateIncidentTablewViewController()
-		window.rootViewController = UINavigationController(rootViewController: mainTableViewController)
-		window.makeKeyAndVisible()
-
-		self.window = window
+//		self.window = window
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

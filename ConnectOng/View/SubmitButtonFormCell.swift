@@ -29,6 +29,7 @@ class SubmitButtonFormCell: UITableViewCell {
 
 	override func layoutSubviews() {
 		super.layoutSubviews()
+		self.selectionStyle = .none
 		self.contentView.addSubview(submitButton)
 		self.backgroundColor = .clear
 		setupConstraints()
