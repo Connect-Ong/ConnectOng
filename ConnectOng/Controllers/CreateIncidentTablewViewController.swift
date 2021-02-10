@@ -10,11 +10,15 @@ import UIKit
 //swiftlint:disable cyclomatic_complexity
 class CreateIncidentTablewViewController: UITableViewController {
 
+	lazy var imagePicker: ImagePicker = {
+		ImagePicker(presentationController: self, delegate: self)
+	}()
+
 	init() {
 		super.init(style: .grouped)
 		tableView.separatorStyle = .none //linhas da tableView
 	}
-	
+
 	required init?(coder: NSCoder) {
 		fatalError("init(coder:) has not been implemented")
 	}
@@ -41,6 +45,12 @@ class CreateIncidentTablewViewController: UITableViewController {
 	}
 }
 
+extension CreateIncidentTablewViewController: ImagePickerDelegate {
+	func didSelect(image: UIImage?) {
+		print("Recebeu 📸")
+	}
+}
+
 // MARK: - UITablewViewDelegate + UItableViewDatasource
 
 extension CreateIncidentTablewViewController {
@@ -60,6 +70,9 @@ extension CreateIncidentTablewViewController {
 		case 0:
 			let dequeuedCell = tableView.dequeueReusableCell(withIdentifier: ImagePickerFormCell.cellIdentifier, for: indexPath)
 			guard let cell = dequeuedCell as? ImagePickerFormCell else { return UITableViewCell() }
+			cell.takePictureHandler = { [weak self] in
+				self?.imagePicker.present(from: cell.imagePickerButton)
+			}
 			return cell
 		case 1:
 			let dequeuedCell = tableView.dequeueReusableCell(withIdentifier: TextFieldFormCell.cellIdentifier, for: indexPath)
@@ -105,7 +118,9 @@ extension CreateIncidentTablewViewController {
 
 	// altura da celula
 	override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-		if indexPath.row == 2 {
+		if indexPath.row == 0 {
+			return 120
+		} else if indexPath.row == 2 {
 			return 140
 		}
 		return 100

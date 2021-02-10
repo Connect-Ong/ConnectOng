@@ -12,22 +12,39 @@ class ImagePickerFormCell: UITableViewCell {
 
 	static let cellIdentifier: String = "ImagePickerButton"
 
+	var takePictureHandler: () -> Void = { }
+
 	let imagePickerButton: UIButton = {
 		let imagePickerButton = UIButton()
-		imagePickerButton.setTitle("📷 Adicione uma foto ao caso", for: .normal)
+		if #available(iOS 13.0, *) {
+			imagePickerButton.setImage(UIImage(systemName: "camera"), for: .normal)
+			imagePickerButton.setTitle(" Adicione uma foto ao caso", for: .normal)
+		} else {
+			imagePickerButton.setTitle("Adicione uma foto ao caso", for: .normal)
+		}
 		imagePickerButton.titleLabel?.font = UIFont.systemFont(ofSize: 20)
+		imagePickerButton.tintColor = UIColor.init(named: "redCustomized")
 		imagePickerButton.setTitleColor(UIColor.init(named: "redCustomized"), for: .normal)
 		return imagePickerButton
 	}()
 
+	let descriptionLabel: UILabel = {
+		let descriptionLabel = UILabel()
+		descriptionLabel.text = "Opcional, porém as pessoas costumam ajudar mais quando tem uma foto"
+		descriptionLabel.font = UIFont.systemFont(ofSize: 17, weight: .light)
+		descriptionLabel.numberOfLines = 2
+		return descriptionLabel
+	}()
+
 	@objc func createButtonWasTapped() {
-		print("Tapped here 🖖🏼")
+		takePictureHandler()
 	}
 
 	override func layoutSubviews() {
 		super.layoutSubviews()
 		self.backgroundColor = .clear
 		self.contentView.addSubview(imagePickerButton)
+		self.contentView.addSubview(descriptionLabel)
 		setupConstraints()
 
 		imagePickerButton.addTarget(self, action: #selector(createButtonWasTapped), for: .touchUpInside)
@@ -35,11 +52,16 @@ class ImagePickerFormCell: UITableViewCell {
 
 	func setupConstraints() {
 		imagePickerButton.translatesAutoresizingMaskIntoConstraints = false
+		descriptionLabel.translatesAutoresizingMaskIntoConstraints = false
 		NSLayoutConstraint.activate([
 			imagePickerButton.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: 20),
 			imagePickerButton.widthAnchor.constraint(equalToConstant: 280),
 			imagePickerButton.topAnchor.constraint(equalTo: self.contentView.topAnchor, constant: 20),
-			imagePickerButton.heightAnchor.constraint(equalToConstant: 40)
+			imagePickerButton.heightAnchor.constraint(equalToConstant: 40),
+
+			descriptionLabel.topAnchor.constraint(equalTo: self.imagePickerButton.bottomAnchor, constant: 5),
+			descriptionLabel.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: 30),
+			descriptionLabel.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor, constant: -30)
 		])
 	}
 

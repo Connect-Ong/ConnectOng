@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+// swiftlint:disable vertical_parameter_alignment
 open class ImagePicker: NSObject, UINavigationControllerDelegate {
 	private let pickerController: UIImagePickerController
 	private weak var presentationController: UIViewController?
