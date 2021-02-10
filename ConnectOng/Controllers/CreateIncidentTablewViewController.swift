@@ -37,6 +37,7 @@ class CreateIncidentTablewViewController: UITableViewController {
 		tableView.register(TextFieldFormCell.self, forCellReuseIdentifier: TextFieldFormCell.cellIdentifier)
 		tableView.register(TextViewFormCell.self, forCellReuseIdentifier: TextViewFormCell.cellIdentifier)
 		tableView.register(SubmitButtonFormCell.self, forCellReuseIdentifier: SubmitButtonFormCell.cellIdentifier)
+		tableView.register(ImagePickerFormCell.self, forCellReuseIdentifier: ImagePickerFormCell.cellIdentifier)
 	}
 }
 
@@ -57,7 +58,9 @@ extension CreateIncidentTablewViewController {
 		// MARK: - GAMBIARRA 💩
 		switch indexPath.row {
 		case 0:
-			return UITableViewCell()
+			let dequeuedCell = tableView.dequeueReusableCell(withIdentifier: ImagePickerFormCell.cellIdentifier, for: indexPath)
+			guard let cell = dequeuedCell as? ImagePickerFormCell else { return UITableViewCell() }
+			return cell
 		case 1:
 			let dequeuedCell = tableView.dequeueReusableCell(withIdentifier: TextFieldFormCell.cellIdentifier, for: indexPath)
 			guard let cell = dequeuedCell as? TextFieldFormCell else { return UITableViewCell() }

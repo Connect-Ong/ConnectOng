@@ -20,7 +20,6 @@ class SubmitButtonFormCell: UITableViewCell {
 		button.layer.cornerRadius = 10
 		button.backgroundColor = UIColor.init(named: "redCustomized")
 		button.translatesAutoresizingMaskIntoConstraints = false
-		button.addTarget(self, action: #selector(createButtonWasTapped), for: .touchUpInside)
 		return button
 	}()
 
@@ -33,6 +32,8 @@ class SubmitButtonFormCell: UITableViewCell {
 		self.contentView.addSubview(submitButton)
 		self.backgroundColor = .clear
 		setupConstraints()
+
+		submitButton.addTarget(self, action: #selector(createButtonWasTapped), for: .touchUpInside)
 	}
 
 	func setupConstraints() {

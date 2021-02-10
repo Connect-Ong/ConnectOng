@@ -17,7 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let docURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
 //        print(try? FileManager.default.contentsOfDirectory(atPath: docURL.relativePath))
-            try? FileManager.default.contentsOfDirectory(atPath: docURL.relativePath)
+		_ = try? FileManager.default.contentsOfDirectory(atPath: docURL.relativePath)
         
         return true
     }

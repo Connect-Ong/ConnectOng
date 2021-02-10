@@ -26,7 +26,7 @@ class AddIncidentViewController: UIViewController {
     
     func createIncidentRequest() {
         guard let url = URL(string: Routes.rootURL+Routes.cadastrar) else { return }
-        var urlRequest = URLRequest(url: url)
+		let urlRequest = URLRequest(url: url)
         var request = urlRequest
         
 //        print(url)

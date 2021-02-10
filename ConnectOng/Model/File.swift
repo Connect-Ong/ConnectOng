@@ -10,7 +10,7 @@ import Foundation
 
 struct File {
     
-    //MARK: Atributos do meu arquivo
+    // MARK: Atributos do meu arquivo
     let ext: String // extensao do arqv
     let name: String // nome do arqv
 //    let content: Data // conteudo do arquivo
