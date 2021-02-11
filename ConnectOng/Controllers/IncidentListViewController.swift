@@ -62,7 +62,6 @@ class IncidentListViewController: UIViewController {
         super.viewDidLoad()
         collectionView.delegate = self
         collectionView.dataSource = self
-        
         collectionView.layer.masksToBounds = false
         self.collectionView.register(UINib(nibName: "IncidentsCollectionViewCell", bundle: .main),
                                      forCellWithReuseIdentifier: IncidentsCollectionViewCell.identifier)

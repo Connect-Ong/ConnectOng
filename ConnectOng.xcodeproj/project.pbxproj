@@ -21,8 +21,6 @@
 		1865010D24EDE2E000B5307A /* IncidentsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1865010B24EDE2E000B5307A /* IncidentsCollectionViewCell.xib */; };
 		1865010F24EEA51000B5307A /* IncidentsDetails.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1865010E24EEA51000B5307A /* IncidentsDetails.storyboard */; };
 		1865011224EEBD4800B5307A /* IncidentsDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1865011124EEBD4800B5307A /* IncidentsDetailsViewController.swift */; };
-		1865011424EEC96600B5307A /* AddIncident.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1865011324EEC96600B5307A /* AddIncident.storyboard */; };
-		1865011624EEC97D00B5307A /* AddIncidentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1865011524EEC97D00B5307A /* AddIncidentViewController.swift */; };
 		1865011D24EFF6AF00B5307A /* Incident.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1865011C24EFF6AF00B5307A /* Incident.swift */; };
 		1865011F24EFF96500B5307A /* Routes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1865011E24EFF96500B5307A /* Routes.swift */; };
 		18858F1D25D34D7D00B1FCD6 /* ImagePickerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18858F1C25D34D7D00B1FCD6 /* ImagePickerDelegate.swift */; };
@@ -34,7 +32,12 @@
 		189AB34025D1EED200EA5E83 /* TextViewFormCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189AB33F25D1EED200EA5E83 /* TextViewFormCell.swift */; };
 		189AB34425D2B5D600EA5E83 /* SubmitButtonFormCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189AB34325D2B5D600EA5E83 /* SubmitButtonFormCell.swift */; };
 		189AB34825D31A7300EA5E83 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189AB34725D31A7300EA5E83 /* ImagePicker.swift */; };
+		18BA3D3625D5B72A00E4F9FB /* AnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BA3D3525D5B72A00E4F9FB /* AnimationView.swift */; };
+		18BA3D3C25D5DB1500E4F9FB /* ImageViewFormCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BA3D3B25D5DB1500E4F9FB /* ImageViewFormCell.swift */; };
 		18F2865E25D49AD800587053 /* CreateIncidentDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F2865D25D49AD800587053 /* CreateIncidentDelegate.swift */; };
+		18F2867525D5547300587053 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18F2867425D5547300587053 /* CloudKit.framework */; };
+		18F2867A25D558AC00587053 /* CloudKitModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F2867925D558AC00587053 /* CloudKitModel.swift */; };
+		18F2868325D562B800587053 /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F2868225D562B800587053 /* Images.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,8 +69,6 @@
 		1865010B24EDE2E000B5307A /* IncidentsCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IncidentsCollectionViewCell.xib; sourceTree = "<group>"; };
 		1865010E24EEA51000B5307A /* IncidentsDetails.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = IncidentsDetails.storyboard; sourceTree = "<group>"; };
 		1865011124EEBD4800B5307A /* IncidentsDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncidentsDetailsViewController.swift; sourceTree = "<group>"; };
-		1865011324EEC96600B5307A /* AddIncident.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddIncident.storyboard; sourceTree = "<group>"; };
-		1865011524EEC97D00B5307A /* AddIncidentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddIncidentViewController.swift; sourceTree = "<group>"; };
 		1865011C24EFF6AF00B5307A /* Incident.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Incident.swift; sourceTree = "<group>"; };
 		1865011E24EFF96500B5307A /* Routes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Routes.swift; sourceTree = "<group>"; };
 		18858F1C25D34D7D00B1FCD6 /* ImagePickerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerDelegate.swift; sourceTree = "<group>"; };
@@ -79,7 +80,13 @@
 		189AB33F25D1EED200EA5E83 /* TextViewFormCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViewFormCell.swift; sourceTree = "<group>"; };
 		189AB34325D2B5D600EA5E83 /* SubmitButtonFormCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubmitButtonFormCell.swift; sourceTree = "<group>"; };
 		189AB34725D31A7300EA5E83 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		18BA3D3525D5B72A00E4F9FB /* AnimationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationView.swift; sourceTree = "<group>"; };
+		18BA3D3B25D5DB1500E4F9FB /* ImageViewFormCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewFormCell.swift; sourceTree = "<group>"; };
 		18F2865D25D49AD800587053 /* CreateIncidentDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateIncidentDelegate.swift; sourceTree = "<group>"; };
+		18F2867025D5545500587053 /* ConnectOng.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ConnectOng.entitlements; sourceTree = "<group>"; };
+		18F2867425D5547300587053 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		18F2867925D558AC00587053 /* CloudKitModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudKitModel.swift; sourceTree = "<group>"; };
+		18F2868225D562B800587053 /* Images.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Images.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +94,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18F2867525D5547300587053 /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -103,8 +111,8 @@
 		1854F5E724F69062000E0FCA /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				1854F5F424F70872000E0FCA /* IncidentJSONManager.swift */,
 				18858F5A25D47E8300B1FCD6 /* Extensions.swift */,
+				18F2865D25D49AD800587053 /* CreateIncidentDelegate.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -115,6 +123,7 @@
 				186500E624EDC3E700B5307A /* ConnectOng */,
 				186500FD24EDC3E900B5307A /* ConnectOngTests */,
 				186500E524EDC3E700B5307A /* Products */,
+				18F2867325D5547300587053 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -130,6 +139,7 @@
 		186500E624EDC3E700B5307A /* ConnectOng */ = {
 			isa = PBXGroup;
 			children = (
+				18F2867025D5545500587053 /* ConnectOng.entitlements */,
 				189AB30F25D161CA00EA5E83 /* Services */,
 				1854F5E724F69062000E0FCA /* Helpers */,
 				1865012424F0538100B5307A /* Model */,
@@ -155,17 +165,15 @@
 		1865012024F0535C00B5307A /* View */ = {
 			isa = PBXGroup;
 			children = (
+				18F2866B25D5536100587053 /* Storyboards */,
 				186500F024EDC3E900B5307A /* Assets.xcassets */,
-				1865010E24EEA51000B5307A /* IncidentsDetails.storyboard */,
 				1865010A24EDE2E000B5307A /* IncidentsCollectionViewCell.swift */,
-				1865010B24EDE2E000B5307A /* IncidentsCollectionViewCell.xib */,
-				186500ED24EDC3E700B5307A /* IncidentList.storyboard */,
-				1865011324EEC96600B5307A /* AddIncident.storyboard */,
-				186500F224EDC3E900B5307A /* LaunchScreen.storyboard */,
 				189AB32325D183FC00EA5E83 /* TextFieldFormCell.swift */,
+				18BA3D3B25D5DB1500E4F9FB /* ImageViewFormCell.swift */,
 				189AB33F25D1EED200EA5E83 /* TextViewFormCell.swift */,
 				189AB34325D2B5D600EA5E83 /* SubmitButtonFormCell.swift */,
 				18858F2125D34E0600B1FCD6 /* ImagePickerFormCell.swift */,
+				18BA3D3525D5B72A00E4F9FB /* AnimationView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -175,7 +183,6 @@
 			children = (
 				1865011124EEBD4800B5307A /* IncidentsDetailsViewController.swift */,
 				186500EB24EDC3E700B5307A /* IncidentListViewController.swift */,
-				1865011524EEC97D00B5307A /* AddIncidentViewController.swift */,
 				189AB31025D164E500EA5E83 /* CreateIncidentTableViewController.swift */,
 			);
 			path = Controllers;
@@ -184,13 +191,12 @@
 		1865012424F0538100B5307A /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				189AB34725D31A7300EA5E83 /* ImagePicker.swift */,
+				18F2868625D562BD00587053 /* Cloudkit */,
 				18858F1C25D34D7D00B1FCD6 /* ImagePickerDelegate.swift */,
 				1854F5F224F6F430000E0FCA /* File.swift */,
 				1865011C24EFF6AF00B5307A /* Incident.swift */,
 				1865011E24EFF96500B5307A /* Routes.swift */,
 				182987C124F5DA3600CBCDA2 /* ImageLoader.swift */,
-				18F2865D25D49AD800587053 /* CreateIncidentDelegate.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -198,6 +204,7 @@
 		189AB30225D071BE00EA5E83 /* VIewModel */ = {
 			isa = PBXGroup;
 			children = (
+				189AB34725D31A7300EA5E83 /* ImagePicker.swift */,
 			);
 			path = VIewModel;
 			sourceTree = "<group>";
@@ -206,8 +213,37 @@
 			isa = PBXGroup;
 			children = (
 				18858F6425D493B500B1FCD6 /* Networking.swift */,
+				1854F5F424F70872000E0FCA /* IncidentJSONManager.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		18F2866B25D5536100587053 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				186500F224EDC3E900B5307A /* LaunchScreen.storyboard */,
+				1865010E24EEA51000B5307A /* IncidentsDetails.storyboard */,
+				1865010B24EDE2E000B5307A /* IncidentsCollectionViewCell.xib */,
+				186500ED24EDC3E700B5307A /* IncidentList.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		18F2867325D5547300587053 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				18F2867425D5547300587053 /* CloudKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		18F2868625D562BD00587053 /* Cloudkit */ = {
+			isa = PBXGroup;
+			children = (
+				18F2867925D558AC00587053 /* CloudKitModel.swift */,
+				18F2868225D562B800587053 /* Images.swift */,
+			);
+			path = Cloudkit;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -296,7 +332,6 @@
 				186500F424EDC3E900B5307A /* LaunchScreen.storyboard in Resources */,
 				186500F124EDC3E900B5307A /* Assets.xcassets in Resources */,
 				186500EF24EDC3E700B5307A /* IncidentList.storyboard in Resources */,
-				1865011424EEC96600B5307A /* AddIncident.storyboard in Resources */,
 				1865010F24EEA51000B5307A /* IncidentsDetails.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -338,17 +373,20 @@
 				189AB34425D2B5D600EA5E83 /* SubmitButtonFormCell.swift in Sources */,
 				1865010C24EDE2E000B5307A /* IncidentsCollectionViewCell.swift in Sources */,
 				186500EC24EDC3E700B5307A /* IncidentListViewController.swift in Sources */,
+				18F2868325D562B800587053 /* Images.swift in Sources */,
 				1865011224EEBD4800B5307A /* IncidentsDetailsViewController.swift in Sources */,
 				18858F2225D34E0600B1FCD6 /* ImagePickerFormCell.swift in Sources */,
+				18F2867A25D558AC00587053 /* CloudKitModel.swift in Sources */,
 				189AB34825D31A7300EA5E83 /* ImagePicker.swift in Sources */,
 				18858F6525D493B500B1FCD6 /* Networking.swift in Sources */,
 				189AB31125D164E500EA5E83 /* CreateIncidentTableViewController.swift in Sources */,
 				18858F5B25D47E8300B1FCD6 /* Extensions.swift in Sources */,
 				186500E824EDC3E700B5307A /* AppDelegate.swift in Sources */,
+				18BA3D3C25D5DB1500E4F9FB /* ImageViewFormCell.swift in Sources */,
 				18F2865E25D49AD800587053 /* CreateIncidentDelegate.swift in Sources */,
 				1865011F24EFF96500B5307A /* Routes.swift in Sources */,
-				1865011624EEC97D00B5307A /* AddIncidentViewController.swift in Sources */,
 				186500EA24EDC3E700B5307A /* SceneDelegate.swift in Sources */,
+				18BA3D3625D5B72A00E4F9FB /* AnimationView.swift in Sources */,
 				1865011D24EFF6AF00B5307A /* Incident.swift in Sources */,
 				18858F1D25D34D7D00B1FCD6 /* ImagePickerDelegate.swift in Sources */,
 				1854F5F324F6F430000E0FCA /* File.swift in Sources */,
@@ -517,8 +555,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = ConnectOng/ConnectOng.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = 4X8K6Z86C3;
 				INFOPLIST_FILE = ConnectOng/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -536,8 +575,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = ConnectOng/ConnectOng.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = 4X8K6Z86C3;
 				INFOPLIST_FILE = ConnectOng/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (

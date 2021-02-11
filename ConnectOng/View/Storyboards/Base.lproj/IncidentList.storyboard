@@ -48,20 +48,11 @@
                     <connections>
                         <outlet property="collectionView" destination="0cw-fu-dUi" id="hc5-pI-Gmf"/>
                         <segue destination="4qV-nJ-HKN" kind="show" identifier="IncidentDetailSegue" id="KHc-iH-3Vv"/>
-                        <segue destination="N2y-5u-sqd" kind="presentation" identifier="AddIncidentSegue" id="LHN-xB-gz5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1255.072463768116" y="144.64285714285714"/>
-        </scene>
-        <!--AddIncident-->
-        <scene sceneID="MCp-47-xjD">
-            <objects>
-                <viewControllerPlaceholder storyboardName="AddIncident" id="N2y-5u-sqd" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="XZz-0S-EYr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1858" y="-107"/>
         </scene>
         <!--IncidentsDetails-->
         <scene sceneID="qtL-Bu-fxD">
