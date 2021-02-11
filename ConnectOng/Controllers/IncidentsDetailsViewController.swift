@@ -19,7 +19,15 @@ class IncidentsDetailsViewController: UIViewController {
     @IBOutlet weak var descriptionDetailLabel: UILabel!
     @IBOutlet weak var valueDetailLabel: UILabel!
     
-    
+	@IBOutlet weak var callButton: UIButton!
+	@IBOutlet weak var whatsappButton: UIButton!
+
+	@IBOutlet weak var callForActionLabel: UILabel!
+
+	@IBAction func makeCallAction(_ sender: Any) {
+		print("Make Call 📞")
+	}
+
     @IBAction func contactWhatsppButtonPressed(_ sender: UIButton) {
         var contact = self.incident.whatsapp
         contact = contact.addingPercentEncoding(withAllowedCharacters: (NSCharacterSet.urlQueryAllowed))!
@@ -58,7 +66,22 @@ class IncidentsDetailsViewController: UIViewController {
         self.descriptionDetailLabel.text = incident.description
         self.titleDetailLabel.text = incident.title
         //        self.detailImageView.image = incident.
-        self.valueDetailLabel.text = "R$ \(incident.value)"
+		if Double(incident.value)! != 0 {
+			self.valueDetailLabel.text = "Valor a ser arrecadado R$ \(incident.value)"
+		} else {
+			self.valueDetailLabel.text = "Miaudote ❤️🐾"
+			self.callForActionLabel.text = "Precisamos da sua ajuda!"
+		}
+
+
+		if #available(iOS 13.0, *) {
+			let largeConfig = UIImage.SymbolConfiguration(pointSize: 22, weight: .bold, scale: .large)
+			let largeBoldDoc = UIImage(systemName: "phone", withConfiguration: largeConfig)
+
+			callButton.setImage(largeBoldDoc, for: .normal)
+		}
+
+		whatsappButton.contentMode = .scaleAspectFit
         
         DispatchQueue.global().async {
             //            let url: URL? = URL(string: self.incident.imgURL)

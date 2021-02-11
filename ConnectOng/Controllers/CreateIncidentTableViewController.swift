@@ -8,7 +8,7 @@
 
 import UIKit
 import CloudKit
-//swiftlint:disable cyclomatic_complexity
+//swiftlint:disable cyclomatic_complexity function_body_length
 class CreateIncidentTableViewController: UITableViewController {
 
 	private var image: UIImage? {

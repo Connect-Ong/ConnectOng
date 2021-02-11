@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -17,187 +18,151 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cadelinha precisando de medicamento" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2XH-kg-95n">
+                                <rect key="frame" x="20" y="514" width="374" height="21.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21.5" id="MQH-VD-3Z8"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="p8d-O4-O6s">
-                                <rect key="frame" x="20" y="49" width="374" height="340"/>
+                                <rect key="frame" x="20" y="44" width="374" height="340"/>
                                 <color key="backgroundColor" red="1" green="0.5" blue="0.58655126328911766" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="340" id="iT3-PQ-KUf"/>
+                                    <constraint firstAttribute="height" constant="340" id="sUt-UH-68M"/>
                                 </constraints>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="iT3-PQ-KUf"/>
-                                    </mask>
-                                </variation>
-                                <variation key="heightClass=regular-widthClass=compact">
-                                    <mask key="constraints">
-                                        <include reference="iT3-PQ-KUf"/>
-                                    </mask>
-                                </variation>
-                            </imageView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="yMU-mJ-6jT">
-                                <rect key="frame" x="20" y="564.5" width="374" height="164"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cadelinha precisando de medicamento" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2XH-kg-95n">
-                                        <rect key="frame" x="0.0" y="0.0" width="374" height="21.5"/>
-                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
-                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A cadelinha Jolie foi atropelada por um carro no bairro Santana e teve que passar por uma cirurgia às pressas." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gv7-mW-0xz">
-                                        <rect key="frame" x="0.0" y="51.5" width="374" height="61"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Valor:  R$ 50,00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r6Q-GV-ELk">
-                                        <rect key="frame" x="0.0" y="142.5" width="374" height="21.5"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
-                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="300" id="4L9-8G-o8O"/>
-                                </constraints>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="4L9-8G-o8O"/>
-                                    </mask>
-                                </variation>
-                                <variation key="heightClass=compact-widthClass=regular">
-                                    <mask key="constraints">
-                                        <include reference="4L9-8G-o8O"/>
-                                    </mask>
-                                </variation>
-                            </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rG6-DK-x6L">
-                                <rect key="frame" x="234" y="767" width="160" height="40"/>
-                                <color key="backgroundColor" name="redCustomized"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="rG6-DK-x6L" secondAttribute="height" multiplier="4:1" id="22h-4Z-nai"/>
-                                    <constraint firstAttribute="width" constant="160" id="VpF-1R-WUJ"/>
-                                    <constraint firstAttribute="height" constant="40" id="gcQ-8c-wN6"/>
-                                    <constraint firstAttribute="width" constant="160" id="zDH-hf-4Bv"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <color key="tintColor" name="whiteSecondary"/>
-                                <state key="normal" title="Contato"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                         <integer key="value" value="10"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="22h-4Z-nai"/>
-                                        <exclude reference="VpF-1R-WUJ"/>
-                                        <exclude reference="gcQ-8c-wN6"/>
-                                        <exclude reference="zDH-hf-4Bv"/>
-                                    </mask>
-                                </variation>
-                                <variation key="heightClass=compact-widthClass=regular">
-                                    <mask key="constraints">
-                                        <include reference="22h-4Z-nai"/>
-                                        <include reference="VpF-1R-WUJ"/>
-                                    </mask>
-                                </variation>
-                                <variation key="heightClass=regular-widthClass=compact">
-                                    <mask key="constraints">
-                                        <include reference="gcQ-8c-wN6"/>
-                                        <include reference="zDH-hf-4Bv"/>
-                                    </mask>
-                                </variation>
-                                <connections>
-                                    <action selector="contactWhatsppButtonPressed:" destination="Hrt-6d-4UG" eventType="touchUpInside" id="4go-us-xKK"/>
-                                </connections>
-                            </button>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="2kj-H5-ZtL">
+                                <rect key="frame" x="224" y="424" width="170" height="50"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SNJ-CD-yJ6">
+                                        <rect key="frame" x="0.0" y="0.0" width="75" height="50"/>
+                                        <color key="backgroundColor" name="redCustomized"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <imageReference key="image" image="phone" catalog="system" symbolScale="large"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="15"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="makeCallAction:" destination="Hrt-6d-4UG" eventType="touchUpInside" id="LcA-Y9-hhc"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sDb-Sb-g0d">
+                                        <rect key="frame" x="95" y="0.0" width="75" height="50"/>
+                                        <color key="backgroundColor" name="redCustomized"/>
+                                        <inset key="imageEdgeInsets" minX="22" minY="10" maxX="22" maxY="10"/>
+                                        <state key="normal" image="whatsApp"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="15"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="contactWhatsppButtonPressed:" destination="Hrt-6d-4UG" eventType="touchUpInside" id="Xlv-HL-0yK"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="170" id="Hg9-5h-tmn"/>
+                                    <constraint firstAttribute="height" constant="50" id="cL2-I6-FhQ"/>
+                                </constraints>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A cadelinha Jolie foi atropelada por um carro no bairro Santana e teve que passar por uma cirurgia às pressas." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gv7-mW-0xz">
+                                <rect key="frame" x="20" y="575.5" width="374" height="61"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="61" id="PeZ-eH-ySR"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Valor a ser arrecadado:  R$ 50,00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r6Q-GV-ELk">
+                                <rect key="frame" x="20" y="676.5" width="374" height="22"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="22" id="oVF-LP-85P"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ajude com qualquer valor, precisamos da sua ajuda!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2IJ-NN-Ubf">
+                                <rect key="frame" x="75" y="728.5" width="264" height="67"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="67" id="8kV-TY-KQA"/>
+                                    <constraint firstAttribute="width" constant="264" id="VLO-Iw-DsH"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contate a Abrace" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Pd-6f-lvC">
+                                <rect key="frame" x="20" y="438.5" width="194" height="21.5"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="obh-9p-HoU"/>
                         <color key="backgroundColor" name="whiteCustomized"/>
                         <constraints>
-                            <constraint firstItem="obh-9p-HoU" firstAttribute="bottom" secondItem="p8d-O4-O6s" secondAttribute="bottom" constant="20" id="3yA-EE-wqH"/>
-                            <constraint firstItem="yMU-mJ-6jT" firstAttribute="top" secondItem="obh-9p-HoU" secondAttribute="top" constant="50" id="56h-wp-yVv"/>
-                            <constraint firstItem="yMU-mJ-6jT" firstAttribute="leading" secondItem="p8d-O4-O6s" secondAttribute="trailing" constant="60" id="ELd-6T-pyB"/>
-                            <constraint firstItem="yMU-mJ-6jT" firstAttribute="leading" secondItem="p8d-O4-O6s" secondAttribute="leading" id="Gcb-Wu-Vfh"/>
-                            <constraint firstItem="p8d-O4-O6s" firstAttribute="leading" secondItem="obh-9p-HoU" secondAttribute="leading" constant="20" id="JVG-c5-PrV"/>
-                            <constraint firstItem="obh-9p-HoU" firstAttribute="leading" secondItem="p8d-O4-O6s" secondAttribute="leading" id="Llx-hN-sN9"/>
-                            <constraint firstItem="rG6-DK-x6L" firstAttribute="trailing" secondItem="yMU-mJ-6jT" secondAttribute="trailing" id="NSz-3v-b7b"/>
-                            <constraint firstItem="obh-9p-HoU" firstAttribute="bottom" secondItem="rG6-DK-x6L" secondAttribute="bottom" constant="55" id="QLc-qQ-v4R"/>
-                            <constraint firstItem="rG6-DK-x6L" firstAttribute="top" secondItem="yMU-mJ-6jT" secondAttribute="bottom" constant="38.5" id="SJ8-Qp-wIu"/>
-                            <constraint firstItem="p8d-O4-O6s" firstAttribute="top" secondItem="obh-9p-HoU" secondAttribute="top" constant="20" id="Vmm-Ra-kVj"/>
-                            <constraint firstItem="rG6-DK-x6L" firstAttribute="leading" secondItem="yMU-mJ-6jT" secondAttribute="leading" id="cNQ-Eu-fuu"/>
-                            <constraint firstItem="obh-9p-HoU" firstAttribute="trailing" secondItem="p8d-O4-O6s" secondAttribute="trailing" constant="20" id="jgr-it-h7l"/>
-                            <constraint firstItem="p8d-O4-O6s" firstAttribute="top" secondItem="obh-9p-HoU" secondAttribute="top" constant="5" id="ku4-DX-qn4"/>
-                            <constraint firstItem="yMU-mJ-6jT" firstAttribute="trailing" secondItem="p8d-O4-O6s" secondAttribute="trailing" id="mxk-Ts-2YH"/>
-                            <constraint firstItem="obh-9p-HoU" firstAttribute="bottom" secondItem="rG6-DK-x6L" secondAttribute="bottom" constant="33" id="p4l-Rt-UL4"/>
-                            <constraint firstAttribute="trailing" secondItem="yMU-mJ-6jT" secondAttribute="trailing" constant="45" id="wIC-qk-Uqm"/>
+                            <constraint firstItem="6Pd-6f-lvC" firstAttribute="leading" secondItem="p8d-O4-O6s" secondAttribute="leading" id="14k-sO-xRz"/>
+                            <constraint firstItem="gv7-mW-0xz" firstAttribute="trailing" secondItem="2XH-kg-95n" secondAttribute="trailing" id="6KA-iR-OEJ"/>
+                            <constraint firstItem="2XH-kg-95n" firstAttribute="leading" secondItem="6Pd-6f-lvC" secondAttribute="leading" id="89w-Te-gM0"/>
+                            <constraint firstItem="2kj-H5-ZtL" firstAttribute="trailing" secondItem="p8d-O4-O6s" secondAttribute="trailing" id="MtL-PI-SlN"/>
+                            <constraint firstItem="2IJ-NN-Ubf" firstAttribute="centerX" secondItem="r6Q-GV-ELk" secondAttribute="centerX" id="OWK-3T-1tT"/>
+                            <constraint firstItem="obh-9p-HoU" firstAttribute="trailing" secondItem="p8d-O4-O6s" secondAttribute="trailing" constant="20" id="T9R-9K-kXV"/>
+                            <constraint firstItem="2XH-kg-95n" firstAttribute="trailing" secondItem="2kj-H5-ZtL" secondAttribute="trailing" id="WI7-D9-353"/>
+                            <constraint firstItem="p8d-O4-O6s" firstAttribute="top" secondItem="obh-9p-HoU" secondAttribute="top" id="WTu-cQ-26U"/>
+                            <constraint firstItem="obh-9p-HoU" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="2IJ-NN-Ubf" secondAttribute="bottom" constant="22" id="Wl4-Qi-Gax"/>
+                            <constraint firstItem="r6Q-GV-ELk" firstAttribute="trailing" secondItem="gv7-mW-0xz" secondAttribute="trailing" id="Wpa-U2-eNT"/>
+                            <constraint firstItem="gv7-mW-0xz" firstAttribute="leading" secondItem="2XH-kg-95n" secondAttribute="leading" id="Zhe-dS-flJ"/>
+                            <constraint firstItem="2IJ-NN-Ubf" firstAttribute="top" secondItem="r6Q-GV-ELk" secondAttribute="bottom" constant="30" id="bLU-Rf-aD0"/>
+                            <constraint firstItem="2kj-H5-ZtL" firstAttribute="leading" secondItem="6Pd-6f-lvC" secondAttribute="trailing" constant="10" id="cYm-cm-6yG"/>
+                            <constraint firstItem="gv7-mW-0xz" firstAttribute="top" secondItem="2XH-kg-95n" secondAttribute="bottom" constant="40" id="gMd-av-LKr"/>
+                            <constraint firstItem="2XH-kg-95n" firstAttribute="top" secondItem="2kj-H5-ZtL" secondAttribute="bottom" constant="40" id="hnx-zJ-XSt"/>
+                            <constraint firstItem="r6Q-GV-ELk" firstAttribute="leading" secondItem="gv7-mW-0xz" secondAttribute="leading" id="nIr-mr-MtP"/>
+                            <constraint firstItem="6Pd-6f-lvC" firstAttribute="centerY" secondItem="2kj-H5-ZtL" secondAttribute="centerY" id="ojr-u8-JNB"/>
+                            <constraint firstItem="2kj-H5-ZtL" firstAttribute="top" secondItem="p8d-O4-O6s" secondAttribute="bottom" constant="40" id="owe-Sh-EHP"/>
+                            <constraint firstItem="r6Q-GV-ELk" firstAttribute="top" secondItem="gv7-mW-0xz" secondAttribute="bottom" constant="40" id="sOy-fN-wDm"/>
+                            <constraint firstItem="p8d-O4-O6s" firstAttribute="leading" secondItem="obh-9p-HoU" secondAttribute="leading" constant="20" id="zws-nt-lgu"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="3yA-EE-wqH"/>
-                                <exclude reference="Llx-hN-sN9"/>
-                                <exclude reference="QLc-qQ-v4R"/>
-                                <exclude reference="jgr-it-h7l"/>
-                                <exclude reference="p4l-Rt-UL4"/>
-                                <exclude reference="JVG-c5-PrV"/>
-                                <exclude reference="Vmm-Ra-kVj"/>
-                                <exclude reference="ku4-DX-qn4"/>
-                                <exclude reference="56h-wp-yVv"/>
-                                <exclude reference="ELd-6T-pyB"/>
-                                <exclude reference="Gcb-Wu-Vfh"/>
-                                <exclude reference="mxk-Ts-2YH"/>
-                                <exclude reference="wIC-qk-Uqm"/>
-                                <exclude reference="NSz-3v-b7b"/>
-                                <exclude reference="SJ8-Qp-wIu"/>
-                                <exclude reference="cNQ-Eu-fuu"/>
-                            </mask>
-                        </variation>
-                        <variation key="heightClass=compact-widthClass=regular">
-                            <mask key="constraints">
-                                <include reference="3yA-EE-wqH"/>
-                                <include reference="Llx-hN-sN9"/>
-                                <include reference="p4l-Rt-UL4"/>
-                                <include reference="Vmm-Ra-kVj"/>
-                                <include reference="56h-wp-yVv"/>
-                                <include reference="ELd-6T-pyB"/>
-                                <include reference="wIC-qk-Uqm"/>
-                                <include reference="cNQ-Eu-fuu"/>
-                            </mask>
-                        </variation>
-                        <variation key="heightClass=regular-widthClass=compact">
-                            <mask key="constraints">
-                                <include reference="QLc-qQ-v4R"/>
-                                <include reference="jgr-it-h7l"/>
-                                <include reference="JVG-c5-PrV"/>
-                                <include reference="ku4-DX-qn4"/>
-                                <include reference="Gcb-Wu-Vfh"/>
-                                <include reference="mxk-Ts-2YH"/>
-                                <include reference="NSz-3v-b7b"/>
-                                <include reference="SJ8-Qp-wIu"/>
-                            </mask>
-                        </variation>
                     </view>
                     <connections>
+                        <outlet property="callButton" destination="SNJ-CD-yJ6" id="RKS-a1-Eba"/>
+                        <outlet property="callForActionLabel" destination="2IJ-NN-Ubf" id="Uea-Nm-bdr"/>
                         <outlet property="descriptionDetailLabel" destination="gv7-mW-0xz" id="Qil-f2-4w2"/>
                         <outlet property="detailImageView" destination="p8d-O4-O6s" id="WG5-vi-PZk"/>
                         <outlet property="titleDetailLabel" destination="2XH-kg-95n" id="5xN-y9-7Ej"/>
                         <outlet property="valueDetailLabel" destination="r6Q-GV-ELk" id="t22-Kx-ZZo"/>
+                        <outlet property="whatsappButton" destination="sDb-Sb-g0d" id="fxS-m2-tgJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7ip-br-dEM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-98.4375" y="-369.56521739130437"/>
+            <point key="canvasLocation" x="-98.550724637681171" y="-369.64285714285711"/>
         </scene>
     </scenes>
     <resources>
+        <image name="phone" catalog="system" width="128" height="115"/>
+        <image name="whatsApp" width="47.333332061767578" height="47.333332061767578"/>
         <namedColor name="redCustomized">
             <color red="0.87599998712539673" green="0.125" blue="0.25499999523162842" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <namedColor name="whiteCustomized">
             <color red="0.94099998474121094" green="0.94099998474121094" blue="0.96100002527236938" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-        </namedColor>
-        <namedColor name="whiteSecondary">
-            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>
