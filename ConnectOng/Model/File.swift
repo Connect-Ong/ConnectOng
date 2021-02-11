@@ -10,7 +10,7 @@ import Foundation
 
 struct File {
     
-    //MARK: Atributos do meu arquivo
+    // MARK: Atributos do meu arquivo
     let ext: String // extensao do arqv
     let name: String // nome do arqv
 //    let content: Data // conteudo do arquivo
@@ -36,7 +36,7 @@ struct File {
         return URL(fileURLWithPath: filePath)
     }
     
-    //MARK: Metodos do meu arquivo
+    // MARK: Metodos do meu arquivo
     func create(content: Data) {
         FileManager.default.createFile(atPath: self.filePath, contents: content, attributes: nil)
     }

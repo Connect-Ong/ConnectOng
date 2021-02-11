@@ -30,7 +30,18 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 //            print(transform)
 //        }
 
-        guard (scene as? UIWindowScene) != nil else { return }
+
+		// MARK: - RootViewController (voltar posteriormente a storyboard
+//        guard let scene = (scene as? UIWindowScene) else { return }
+
+//		let window = UIWindow(windowScene: scene)
+//		window.backgroundColor = UIColor.white
+//
+//		let mainTableViewController = CreateIncidentTablewViewController()
+//		window.rootViewController = UINavigationController(rootViewController: mainTableViewController)
+//		window.makeKeyAndVisible()
+
+//		self.window = window
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

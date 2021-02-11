@@ -25,6 +25,16 @@
 		1865011624EEC97D00B5307A /* AddIncidentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1865011524EEC97D00B5307A /* AddIncidentViewController.swift */; };
 		1865011D24EFF6AF00B5307A /* Incident.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1865011C24EFF6AF00B5307A /* Incident.swift */; };
 		1865011F24EFF96500B5307A /* Routes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1865011E24EFF96500B5307A /* Routes.swift */; };
+		18858F1D25D34D7D00B1FCD6 /* ImagePickerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18858F1C25D34D7D00B1FCD6 /* ImagePickerDelegate.swift */; };
+		18858F2225D34E0600B1FCD6 /* ImagePickerFormCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18858F2125D34E0600B1FCD6 /* ImagePickerFormCell.swift */; };
+		18858F5B25D47E8300B1FCD6 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18858F5A25D47E8300B1FCD6 /* Extensions.swift */; };
+		18858F6525D493B500B1FCD6 /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18858F6425D493B500B1FCD6 /* Networking.swift */; };
+		189AB31125D164E500EA5E83 /* CreateIncidentTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189AB31025D164E500EA5E83 /* CreateIncidentTableViewController.swift */; };
+		189AB32425D183FC00EA5E83 /* TextFieldFormCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189AB32325D183FC00EA5E83 /* TextFieldFormCell.swift */; };
+		189AB34025D1EED200EA5E83 /* TextViewFormCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189AB33F25D1EED200EA5E83 /* TextViewFormCell.swift */; };
+		189AB34425D2B5D600EA5E83 /* SubmitButtonFormCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189AB34325D2B5D600EA5E83 /* SubmitButtonFormCell.swift */; };
+		189AB34825D31A7300EA5E83 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189AB34725D31A7300EA5E83 /* ImagePicker.swift */; };
+		18F2865E25D49AD800587053 /* CreateIncidentDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F2865D25D49AD800587053 /* CreateIncidentDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +70,16 @@
 		1865011524EEC97D00B5307A /* AddIncidentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddIncidentViewController.swift; sourceTree = "<group>"; };
 		1865011C24EFF6AF00B5307A /* Incident.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Incident.swift; sourceTree = "<group>"; };
 		1865011E24EFF96500B5307A /* Routes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Routes.swift; sourceTree = "<group>"; };
+		18858F1C25D34D7D00B1FCD6 /* ImagePickerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerDelegate.swift; sourceTree = "<group>"; };
+		18858F2125D34E0600B1FCD6 /* ImagePickerFormCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerFormCell.swift; sourceTree = "<group>"; };
+		18858F5A25D47E8300B1FCD6 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		18858F6425D493B500B1FCD6 /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
+		189AB31025D164E500EA5E83 /* CreateIncidentTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateIncidentTableViewController.swift; sourceTree = "<group>"; };
+		189AB32325D183FC00EA5E83 /* TextFieldFormCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldFormCell.swift; sourceTree = "<group>"; };
+		189AB33F25D1EED200EA5E83 /* TextViewFormCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViewFormCell.swift; sourceTree = "<group>"; };
+		189AB34325D2B5D600EA5E83 /* SubmitButtonFormCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubmitButtonFormCell.swift; sourceTree = "<group>"; };
+		189AB34725D31A7300EA5E83 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		18F2865D25D49AD800587053 /* CreateIncidentDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateIncidentDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +104,7 @@
 			isa = PBXGroup;
 			children = (
 				1854F5F424F70872000E0FCA /* IncidentJSONManager.swift */,
+				18858F5A25D47E8300B1FCD6 /* Extensions.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -109,6 +130,7 @@
 		186500E624EDC3E700B5307A /* ConnectOng */ = {
 			isa = PBXGroup;
 			children = (
+				189AB30F25D161CA00EA5E83 /* Services */,
 				1854F5E724F69062000E0FCA /* Helpers */,
 				1865012424F0538100B5307A /* Model */,
 				1865012224F0536F00B5307A /* Controllers */,
@@ -140,6 +162,10 @@
 				186500ED24EDC3E700B5307A /* IncidentList.storyboard */,
 				1865011324EEC96600B5307A /* AddIncident.storyboard */,
 				186500F224EDC3E900B5307A /* LaunchScreen.storyboard */,
+				189AB32325D183FC00EA5E83 /* TextFieldFormCell.swift */,
+				189AB33F25D1EED200EA5E83 /* TextViewFormCell.swift */,
+				189AB34325D2B5D600EA5E83 /* SubmitButtonFormCell.swift */,
+				18858F2125D34E0600B1FCD6 /* ImagePickerFormCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -150,6 +176,7 @@
 				1865011124EEBD4800B5307A /* IncidentsDetailsViewController.swift */,
 				186500EB24EDC3E700B5307A /* IncidentListViewController.swift */,
 				1865011524EEC97D00B5307A /* AddIncidentViewController.swift */,
+				189AB31025D164E500EA5E83 /* CreateIncidentTableViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -157,10 +184,13 @@
 		1865012424F0538100B5307A /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				189AB34725D31A7300EA5E83 /* ImagePicker.swift */,
+				18858F1C25D34D7D00B1FCD6 /* ImagePickerDelegate.swift */,
 				1854F5F224F6F430000E0FCA /* File.swift */,
 				1865011C24EFF6AF00B5307A /* Incident.swift */,
 				1865011E24EFF96500B5307A /* Routes.swift */,
 				182987C124F5DA3600CBCDA2 /* ImageLoader.swift */,
+				18F2865D25D49AD800587053 /* CreateIncidentDelegate.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -170,6 +200,14 @@
 			children = (
 			);
 			path = VIewModel;
+			sourceTree = "<group>";
+		};
+		189AB30F25D161CA00EA5E83 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				18858F6425D493B500B1FCD6 /* Networking.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -297,16 +335,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				189AB34425D2B5D600EA5E83 /* SubmitButtonFormCell.swift in Sources */,
 				1865010C24EDE2E000B5307A /* IncidentsCollectionViewCell.swift in Sources */,
 				186500EC24EDC3E700B5307A /* IncidentListViewController.swift in Sources */,
 				1865011224EEBD4800B5307A /* IncidentsDetailsViewController.swift in Sources */,
+				18858F2225D34E0600B1FCD6 /* ImagePickerFormCell.swift in Sources */,
+				189AB34825D31A7300EA5E83 /* ImagePicker.swift in Sources */,
+				18858F6525D493B500B1FCD6 /* Networking.swift in Sources */,
+				189AB31125D164E500EA5E83 /* CreateIncidentTableViewController.swift in Sources */,
+				18858F5B25D47E8300B1FCD6 /* Extensions.swift in Sources */,
 				186500E824EDC3E700B5307A /* AppDelegate.swift in Sources */,
+				18F2865E25D49AD800587053 /* CreateIncidentDelegate.swift in Sources */,
 				1865011F24EFF96500B5307A /* Routes.swift in Sources */,
 				1865011624EEC97D00B5307A /* AddIncidentViewController.swift in Sources */,
 				186500EA24EDC3E700B5307A /* SceneDelegate.swift in Sources */,
 				1865011D24EFF6AF00B5307A /* Incident.swift in Sources */,
+				18858F1D25D34D7D00B1FCD6 /* ImagePickerDelegate.swift in Sources */,
 				1854F5F324F6F430000E0FCA /* File.swift in Sources */,
 				182987C224F5DA3600CBCDA2 /* ImageLoader.swift in Sources */,
+				189AB34025D1EED200EA5E83 /* TextViewFormCell.swift in Sources */,
+				189AB32425D183FC00EA5E83 /* TextFieldFormCell.swift in Sources */,
 				1854F5F524F70872000E0FCA /* IncidentJSONManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
