@@ -7,8 +7,15 @@
 //
 
 import UIKit
-//swiftlint:disable cyclomatic_complexity
+import CloudKit
+//swiftlint:disable cyclomatic_complexity function_body_length
 class CreateIncidentTableViewController: UITableViewController {
+
+	private var image: UIImage? {
+		didSet {
+			self.tableView.reloadData()
+		}
+	}
 
 	weak var delegate: CreateIncidentDelegate?
 
@@ -47,6 +54,7 @@ class CreateIncidentTableViewController: UITableViewController {
 		tableView.register(TextViewFormCell.self, forCellReuseIdentifier: TextViewFormCell.cellIdentifier)
 		tableView.register(SubmitButtonFormCell.self, forCellReuseIdentifier: SubmitButtonFormCell.cellIdentifier)
 		tableView.register(ImagePickerFormCell.self, forCellReuseIdentifier: ImagePickerFormCell.cellIdentifier)
+		tableView.register(ImageViewFormCell.self, forCellReuseIdentifier: ImageViewFormCell.cellIdentifier)
 	}
 
 	func setupNavigationItem() {
@@ -115,8 +123,33 @@ class CreateIncidentTableViewController: UITableViewController {
 
 extension CreateIncidentTableViewController: ImagePickerDelegate {
 	func didSelect(image: UIImage?) {
-		print("Recebeu 📸")
+		self.image = image
+//		print("Recebeu 📸")
+//		if let data = image?.jpegData(compressionQuality: 0.5),
+//		   let documentsURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
+//			let imageURL = documentsURL.appendingPathComponent(UUID().uuidString+".jpg")
+//
+//			do {
+//				try data.write(to: imageURL)
+//
+//				//Salvar no CloudKit
+//				let newImage = Images(id: CKRecord.ID(), imageURLAsset: CKAsset(fileURL: imageURL))
+//				CloudKitModel.current.saveImage(image: newImage) { (result) in
+//					switch result {
+//					case .success(let record):
+//						print(record.description)
+//					case .failure(let error):
+//						print(error.localizedDescription)
+//					}
+//				}
+//
+//			} catch {
+//				print(error.localizedDescription)
+//			}
+//		}
+
 	}
+
 }
 
 // MARK: - UITablewViewDelegate + UItableViewDatasource
@@ -136,12 +169,25 @@ extension CreateIncidentTableViewController {
 		// MARK: - GAMBIARRA 💩
 		switch indexPath.row {
 		case 0:
-			let dequeuedCell = tableView.dequeueReusableCell(withIdentifier: ImagePickerFormCell.cellIdentifier, for: indexPath)
-			guard let cell = dequeuedCell as? ImagePickerFormCell else { return UITableViewCell() }
-			cell.takePictureHandler = { [weak self] in
-				self?.imagePicker.present(from: cell.imagePickerButton)
+
+			if let image = self.image {
+
+				let dequeuedCell = tableView.dequeueReusableCell(withIdentifier: ImageViewFormCell.cellIdentifier, for: indexPath)
+				guard let cell = dequeuedCell as? ImageViewFormCell else { return UITableViewCell() }
+				cell.pictureView.image = image
+				return cell
+
+			} else {
+
+				let dequeuedCell = tableView.dequeueReusableCell(withIdentifier: ImagePickerFormCell.cellIdentifier, for: indexPath)
+				guard let cell = dequeuedCell as? ImagePickerFormCell else { return UITableViewCell() }
+				cell.takePictureHandler = { [weak self] in
+					self?.imagePicker.present(from: cell.imagePickerButton)
+				}
+				return cell
+
 			}
-			return cell
+
 		case 1:
 			let dequeuedCell = tableView.dequeueReusableCell(withIdentifier: TextFieldFormCell.cellIdentifier, for: indexPath)
 			guard let cell = dequeuedCell as? TextFieldFormCell else { return UITableViewCell() }
@@ -186,7 +232,7 @@ extension CreateIncidentTableViewController {
 	override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
 		switch indexPath.row {
 		case 0:
-			return 100
+			return image != nil ? UITableView.automaticDimension : 100
 		case 2:
 			return 140
 		case 6:

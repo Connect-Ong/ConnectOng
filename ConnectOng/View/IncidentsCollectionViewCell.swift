@@ -11,7 +11,7 @@ import UIKit
 class IncidentsCollectionViewCell: UICollectionViewCell {
     
     var imageLoader = ImageLoader.singleton
-    
+
     @IBOutlet weak var cardView: UIView!
     @IBOutlet weak var pictureImageView: UIImageView!
     @IBOutlet weak var cityLabel: UILabel!
@@ -30,17 +30,33 @@ class IncidentsCollectionViewCell: UICollectionViewCell {
     
     override func awakeFromNib() { 
         super.awakeFromNib()
-
 		self.clipsToBounds = false
-		//        self.contentView.layer.masksToBounds = false
 		self.layer.masksToBounds = false
 		self.applyShadow()
     }
-    
+
     override func prepareForReuse() {
 		super.prepareForReuse()
 		self.pictureImageView.image = nil
     }
+
+	override func didMoveToSuperview() {
+		super.didMoveToSuperview()
+		let longPressRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(longPressed))
+		longPressRecognizer.minimumPressDuration = 0.2
+		self.addGestureRecognizer(longPressRecognizer)
+	}
+
+	@objc func longPressed(sender: UILongPressGestureRecognizer) {
+		if sender.state == .began {
+			print("TOUCH")
+			let animationView = AnimationView(image: self.pictureImageView.image)
+			UIApplication.shared.keyWindow?.addSubview(animationView)
+		} else if sender.state == .ended {
+			print("BYE")
+			UIApplication.shared.keyWindow?.subviews.last?.removeFromSuperview()
+		}
+	}
 
 }
 
