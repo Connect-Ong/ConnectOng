@@ -7,5 +7,8 @@
 
  Neste repositorio contém apenas o aplicativo iOS nativo, o aplicativo possui uma Licença, a mesma diz que você não poderá utilizar para fins comerciais e nem fins lucrativos sob penas legais.
  
- LICENSE
+ 
+ 
+ 
+## LICENSE
 Copyright 2021 ConnectOng
