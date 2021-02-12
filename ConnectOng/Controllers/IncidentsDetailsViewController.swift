@@ -26,6 +26,14 @@ class IncidentsDetailsViewController: UIViewController {
 
 	@IBAction func makeCallAction(_ sender: Any) {
 		print("Make Call 📞")
+		if let url = URL(string: "tel://\(self.incident.whatsapp)"),
+		   UIApplication.shared.canOpenURL(url) {
+			if #available(iOS 10, *) {
+				UIApplication.shared.open(url, options: [:], completionHandler:nil)
+			} else {
+				UIApplication.shared.openURL(url)
+			}
+		}
 	}
 
     @IBAction func contactWhatsppButtonPressed(_ sender: UIButton) {
