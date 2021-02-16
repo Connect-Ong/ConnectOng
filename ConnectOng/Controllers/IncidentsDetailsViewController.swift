@@ -25,7 +25,6 @@ class IncidentsDetailsViewController: UIViewController {
 	@IBOutlet weak var callForActionLabel: UILabel!
 
 	@IBAction func makeCallAction(_ sender: Any) {
-		print("Make Call 📞")
 		if let url = URL(string: "tel://\(self.incident.whatsapp)"),
 		   UIApplication.shared.canOpenURL(url) {
 			if #available(iOS 10, *) {
@@ -59,7 +58,6 @@ class IncidentsDetailsViewController: UIViewController {
                                                         preferredStyle: .alert)
                 alertController.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
                 self.present(alertController, animated: true, completion: nil)
-//                print("Provavelmente sem whattsApp")
             }
         }
         

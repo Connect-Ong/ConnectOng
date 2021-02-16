@@ -38,7 +38,7 @@ class CreateIncidentTableViewController: UITableViewController {
 	}
 
 	@objc func dismissKeyboard() {
-		 self.view.endEditing(true)
+		self.view.endEditing(true)
 	}
 
 	override func viewDidLoad() {
@@ -88,26 +88,54 @@ class CreateIncidentTableViewController: UITableViewController {
 	}
 
 	@objc func didTapRegister() {
-		createIncidentSubmission()
+		submitImageCloudkit()
 	}
 
 	@objc func didTapCancel() {
 		self.dismiss(animated: true, completion: nil)
 	}
 
-	func createIncidentSubmission() {
+	func submitImageCloudkit() {
+		let imageName = UUID().uuidString
+		if let data = image?.jpegData(compressionQuality: 0.5),
+		   let documentsURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
+			let imageURL = documentsURL.appendingPathComponent(imageName+".jpg")
+
+			do {
+				try data.write(to: imageURL)
+
+				//Salvar no CloudKit
+				let newImage = Images(id: CKRecord.ID(), imageURLAsset: CKAsset(fileURL: imageURL))
+				CloudKitModel.current.saveImage(image: newImage) { (result) in
+					switch result {
+					case .success(let record):
+//						print(record.description)
+
+//						print("Record ID aqui: \(record.recordID.recordName)")
+						self.createIncidentSubmission(imageName: record.recordID.recordName)
+
+					case .failure(let error):
+						print(error.localizedDescription)
+					}
+				}
+
+			} catch {
+				print(error.localizedDescription)
+			}
+		}
+	}
+
+	func createIncidentSubmission(imageName: String) {
 
 		// MARK: Acessando cada celula do formulario
-//		tableView.cellForRow(at: IndexPath(row: 0, section: 0)) as? ImagePickerFormCell
+		//		tableView.cellForRow(at: IndexPath(row: 0, section: 0)) as? ImagePickerFormCell
 		guard let titleCell = tableView.cellForRow(at: IndexPath(row: 1, section: 0)) as? TextFieldFormCell,
 			  let descriptionCell = tableView.cellForRow(at: IndexPath(row: 2, section: 0)) as? TextViewFormCell,
-//			  let cityCell = tableView.cellForRow(at: IndexPath(row: 3, section: 0)) as? TextFieldFormCell,
+			  //			  let cityCell = tableView.cellForRow(at: IndexPath(row: 3, section: 0)) as? TextFieldFormCell,
 			  let valueCell = tableView.cellForRow(at: IndexPath(row: 3, section: 0)) as? TextFieldFormCell,
 			  let ongIDCell = tableView.cellForRow(at: IndexPath(row: 4, section: 0)) as? TextFieldFormCell else {
 			return
 		}
-
-		print("Chamando o back...")
 
 		// MARK: Chamar o Back via Networking
 		Networking.createIncidentRequest(
@@ -115,8 +143,8 @@ class CreateIncidentTableViewController: UITableViewController {
 			title: titleCell.textFieldForm.text,
 			description: descriptionCell.textViewForm.text,
 			value: valueCell.textFieldForm.text,
-			imgUrl: "",
-//			city: cityCell.textFieldForm.text ?? "",
+			imgUrl: imageName,
+			//			city: cityCell.textFieldForm.text ?? "",
 			completion: { [weak self] in
 				self?.dismiss(animated: true, completion: nil)
 				self?.delegate?.updateList()
@@ -129,32 +157,7 @@ class CreateIncidentTableViewController: UITableViewController {
 extension CreateIncidentTableViewController: ImagePickerDelegate {
 	func didSelect(image: UIImage?) {
 		self.image = image
-//		print("Recebeu 📸")
-//		if let data = image?.jpegData(compressionQuality: 0.5),
-//		   let documentsURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
-//			let imageURL = documentsURL.appendingPathComponent(UUID().uuidString+".jpg")
-//
-//			do {
-//				try data.write(to: imageURL)
-//
-//				//Salvar no CloudKit
-//				let newImage = Images(id: CKRecord.ID(), imageURLAsset: CKAsset(fileURL: imageURL))
-//				CloudKitModel.current.saveImage(image: newImage) { (result) in
-//					switch result {
-//					case .success(let record):
-//						print(record.description)
-//					case .failure(let error):
-//						print(error.localizedDescription)
-//					}
-//				}
-//
-//			} catch {
-//				print(error.localizedDescription)
-//			}
-//		}
-
 	}
-
 }
 
 // MARK: - UITablewViewDelegate + UItableViewDatasource
@@ -203,11 +206,11 @@ extension CreateIncidentTableViewController {
 			guard let cell = dequeuedCell as? TextViewFormCell else { return UITableViewCell() }
 			cell.setupTextValue(title: "Descrição", placeholder: "Máximo 200 caracteres")
 			return cell
-//		case 3:
-//			let dequeuedCell = tableView.dequeueReusableCell(withIdentifier: TextFieldFormCell.cellIdentifier, for: indexPath)
-//			guard let cell = dequeuedCell as? TextFieldFormCell else { return UITableViewCell() }
-//			cell.setupTextValue(title: "Cidade", placeholder: "Cidade do caso", keyboardType: .asciiCapable)
-//			return cell
+		//		case 3:
+		//			let dequeuedCell = tableView.dequeueReusableCell(withIdentifier: TextFieldFormCell.cellIdentifier, for: indexPath)
+		//			guard let cell = dequeuedCell as? TextFieldFormCell else { return UITableViewCell() }
+		//			cell.setupTextValue(title: "Cidade", placeholder: "Cidade do caso", keyboardType: .asciiCapable)
+		//			return cell
 		case 3:
 			let dequeuedCell = tableView.dequeueReusableCell(withIdentifier: TextFieldFormCell.cellIdentifier, for: indexPath)
 			guard let cell = dequeuedCell as? TextFieldFormCell else { return UITableViewCell() }
@@ -222,7 +225,7 @@ extension CreateIncidentTableViewController {
 			let dequeuedCell = tableView.dequeueReusableCell(withIdentifier: SubmitButtonFormCell.cellIdentifier, for: indexPath)
 			guard let cell = dequeuedCell as? SubmitButtonFormCell else { return UITableViewCell() }
 			cell.submitHandler = { [weak self] in
-				self?.createIncidentSubmission()
+				self?.submitImageCloudkit()
 			}
 			return cell
 

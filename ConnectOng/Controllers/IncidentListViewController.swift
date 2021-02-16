@@ -100,11 +100,7 @@ extension IncidentListViewController: UICollectionViewDelegate, UICollectionView
             cell.cityLabel.text = incidents[indexPath.row].city
 			cell.titleLabel.text = incidents[indexPath.row].title
             cell.ongLabel.text = "Ong \(incidents[indexPath.row].name)"
-            //            print(incidents[indexPath.row].imgURL)
-            
-            // carregar imagem
-//            let imageURL = incidents[indexPath.row].imgURL
-//            cell.url = URL(string: imageURL)
+
 			if let image = pictures[indexPath.row] {
 				cell.pictureImageView.image = image
 			}

@@ -49,11 +49,9 @@ class IncidentsCollectionViewCell: UICollectionViewCell {
 
 	@objc func longPressed(sender: UILongPressGestureRecognizer) {
 		if sender.state == .began {
-			print("TOUCH")
 			let animationView = AnimationView(image: self.pictureImageView.image)
 			UIApplication.shared.keyWindow?.addSubview(animationView)
 		} else if sender.state == .ended {
-			print("BYE")
 			UIApplication.shared.keyWindow?.subviews.last?.removeFromSuperview()
 		}
 	}
