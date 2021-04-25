@@ -23,8 +23,8 @@ extension UIDevice {
 	func sizeForCollectionCell() -> CGSize {
 
 		let sizeForSE = CGSize(
-			width: (UIScreen.main.bounds.width / 2.18),
-			height: (UIScreen.main.bounds.height / 2.5)
+			width: (UIScreen.main.bounds.width / 2.23),
+			height: (UIScreen.main.bounds.height / 2.3)
 		)
 
 		let sizeForMini = CGSize(

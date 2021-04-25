@@ -26,11 +26,6 @@
 	</array>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
-	<key>NSAppTransportSecurity</key>
-	<dict>
-		<key>NSAllowsArbitraryLoads</key>
-		<true/>
-	</dict>
 	<key>NSCameraUsageDescription</key>
 	<string>Por favor permita o acesso para tirar uma foto </string>
 	<key>NSPhotoLibraryAddUsageDescription</key>
